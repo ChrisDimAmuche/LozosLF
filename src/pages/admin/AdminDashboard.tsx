@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { Link, Routes, Route, useLocation, Navigate, Outlet } from 'react-router-dom';
 import { useAuth } from '../../components/auth/AuthProvider';
 import { Layout, Settings, Image, MessageCircle, LogOut, Users, Building, Coins, Map } from 'lucide-react';
 import PartnersManagement from './components/PartnersManagement';
