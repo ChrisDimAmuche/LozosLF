@@ -1,6 +1,6 @@
 import React from 'react';
 import { getSocialLinksByPosition } from '../../lib/data';
-import { Twitter, Video } from 'lucide-react';
+import { X, Video } from 'lucide-react';
 
 const Footer = () => {
   const bottomSocialLinks = getSocialLinksByPosition('bottom');
@@ -8,7 +8,7 @@ const Footer = () => {
   const getIconComponent = (iconName: string) => {
     switch (iconName) {
       case 'twitter':
-        return <Twitter className="w-5 h-5" />;
+        return <X className="w-5 h-5" />;
       case 'video':
         return <Video className="w-5 h-5" />;
       default:
