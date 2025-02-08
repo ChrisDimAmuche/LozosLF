@@ -2,21 +2,27 @@ import data from '../data/content.json';
 import { ContentItem, SocialLink, Image, Partner, Founder, Tokenomics, Roadmap, PageSettings, Favicon } from './types';
 import { dataEvents } from './events';
 
-// Save data to localStorage for persistence
+// Save data to sessionStorage for persistence during admin session
 const saveData = () => {
-  localStorage.setItem('lozos_lotofair_data', JSON.stringify(data));
+  sessionStorage.setItem('lozos_lotofair_data', JSON.stringify(data));
 };
 
-// Load data from localStorage on init
+// Load data from sessionStorage or fallback to initial data
 const loadData = () => {
-  const savedData = localStorage.getItem('lozos_lotofair_data');
+  const savedData = sessionStorage.getItem('lozos_lotofair_data');
   if (savedData) {
     Object.assign(data, JSON.parse(savedData));
   }
 };
 
-// Initialize data from localStorage
+// Initialize data
 loadData();
+
+// Reset data to initial state
+export const resetData = () => {
+  sessionStorage.removeItem('lozos_lotofair_data');
+  Object.assign(data, JSON.parse(JSON.stringify(data))); // Reset to initial state
+};
 
 export const EVENTS = {
   TOKENOMICS_VISIBILITY_CHANGED: 'tokenomics_visibility_changed',
