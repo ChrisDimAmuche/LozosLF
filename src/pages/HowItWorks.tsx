@@ -219,11 +219,11 @@ const HowItWorks = () => {
                     <div className="bg-white/5 p-4 rounded-lg">
                       <p className="text-yellow-500 mb-2">Example</p>
                       <div className="space-y-2">
-                        <p className="text-gray-300">Prize Pool: $500</p>
-                        <p className="text-gray-300">Total Correct Bets: $100</p>
-                        <p className="text-gray-300">Bob's Bet: $25</p>
+                        <p className="text-gray-300">Prize Pool: $1,000</p>
+                        <p className="text-gray-300">Total Correct Bets: $200</p>
+                        <p className="text-gray-300">Bob's Bet: $50</p>
                         <p className="text-lg text-white mt-2">Calculation:</p>
-                        <p className="text-yellow-500">($25 ÷ $100) × $500 = $125</p>
+                        <p className="text-yellow-500">($50 ÷ $200) × $1,000 = $250</p>
                       </div>
                     </div>
                   </div>
@@ -303,12 +303,12 @@ const HowItWorks = () => {
                 <div className="bg-white/5 rounded-xl p-8 border border-white/10">
                   <h4 className="text-2xl font-semibold text-white mb-6">Example Scenario</h4>
                   <div className="space-y-3 text-gray-300">
-                    <p>• Challenger sets $100 prize</p>
-                    <p>• 5 bettors join, each betting $10</p>
+                    <p>• Challenger sets $1,000 prize</p>
+                    <p>• 10 bettors join, each betting $50</p>
                     <p>• Each picks 3 colors from wheel</p>
-                    <p>• If no winner: Challenger gets $150</p>
-                    <p>• If one wins: Gets full $100 prize</p>
-                    <p>• Others get $10 refund each</p>
+                    <p>• If no winner: Challenger gets $1,500</p>
+                    <p>• If one wins: Gets full $1,000 prize</p>
+                    <p>• Others get $50 refund each</p>
                   </div>
                 </div>
                 <div className="bg-white/5 rounded-xl p-8 border border-white/10">
