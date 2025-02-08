@@ -38,12 +38,15 @@ function App() {
                 <Route path="/whitepaper" element={<Whitepaper />} />
                 <Route path="/presale" element={<Presale />} />
                 <Route path="/how-it-works" element={<HowItWorks />} />
-                <Route path="/admin/login" element={<Login />} />
-                <Route path="/admin/*" element={
-                  <ProtectedRoute>
-                    <AdminDashboard />
-                  </ProtectedRoute>
-                } />
+                {/* Admin routes */}
+                <Route path="/admin">
+                  <Route path="login" element={<Login />} />
+                  <Route path="*" element={
+                    <ProtectedRoute>
+                      <AdminDashboard />
+                    </ProtectedRoute>
+                  } />
+                </Route>
               </Routes>
             </main>
           </React.Suspense>
