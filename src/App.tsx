@@ -16,6 +16,15 @@ const HowItWorks = React.lazy(() => import('./pages/HowItWorks'));
 const AdminDashboard = React.lazy(() => import('./pages/admin/AdminDashboard'));
 const Login = React.lazy(() => import('./pages/admin/Login'));
 
+// Lazy load admin components
+const ContentManagement = React.lazy(() => import('./pages/admin/components/ContentManagement'));
+const ImageManagement = React.lazy(() => import('./pages/admin/components/ImageManagement'));
+const CommunityManagement = React.lazy(() => import('./pages/admin/components/CommunityManagement'));
+const PartnersManagement = React.lazy(() => import('./pages/admin/components/PartnersManagement'));
+const FoundersManagement = React.lazy(() => import('./pages/admin/components/FoundersManagement'));
+const TokenomicsManagement = React.lazy(() => import('./pages/admin/components/TokenomicsManagement'));
+const RoadmapManagement = React.lazy(() => import('./pages/admin/components/RoadmapManagement'));
+
 function App() {
   return (
     <AuthProvider>
