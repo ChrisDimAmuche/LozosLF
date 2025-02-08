@@ -1,44 +1,38 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 interface AuthContextType {
   isAdmin: boolean;
-  login: (key: string) => boolean;
+  login: (key: string) => Promise<boolean>;
   logout: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// This would be your admin key - in a real app, this should be more secure
-const ADMIN_KEY = 'lozos-admin-2025';
+// This is a simple key for demo purposes. In production, use a more secure method
+const ADMIN_KEY = 'lozo-admin-2024';
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [isAdmin, setIsAdmin] = useState(false);
-  const location = useLocation();
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    // Check if admin status is stored in sessionStorage
-    const storedAdminStatus = sessionStorage.getItem('isAdmin') === 'true';
-    if (storedAdminStatus) {
+    // Check session storage on mount
+    const adminSession = sessionStorage.getItem('lozo-admin-session');
+    if (adminSession === 'true') {
       setIsAdmin(true);
     }
+  }, []);
 
-    // Check URL for admin key
-    const searchParams = new URLSearchParams(location.search);
-    const keyFromUrl = searchParams.get('key');
-    if (keyFromUrl === ADMIN_KEY) {
-      setIsAdmin(true);
-      sessionStorage.setItem('isAdmin', 'true');
-      // Remove key from URL but maintain the path
-      navigate(location.pathname, { replace: true });
-    }
-  }, [location, navigate]);
-
-  const login = (key: string) => {
+  const login = async (key: string): Promise<boolean> => {
     if (key === ADMIN_KEY) {
       setIsAdmin(true);
-      sessionStorage.setItem('isAdmin', 'true');
+      sessionStorage.setItem('lozo-admin-session', 'true');
+      
+      // Get the return URL from the location state or default to /admin
+      const returnUrl = new URLSearchParams(location.search).get('returnUrl') || '/admin';
+      navigate(returnUrl);
       return true;
     }
     return false;
@@ -46,7 +40,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const logout = () => {
     setIsAdmin(false);
-    sessionStorage.removeItem('isAdmin');
+    sessionStorage.removeItem('lozo-admin-session');
     navigate('/');
   };
 
