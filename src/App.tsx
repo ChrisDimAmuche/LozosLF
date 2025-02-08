@@ -39,13 +39,14 @@ function App() {
                 <Route path="/presale" element={<Presale />} />
                 <Route path="/how-it-works" element={<HowItWorks />} />
                 {/* Admin routes */}
-                <Route path="/admin">
-                  <Route path="login" element={<Login />} />
-                  <Route path="*" element={
-                    <ProtectedRoute>
-                      <AdminDashboard />
-                    </ProtectedRoute>
-                  } />
+                <Route path="/admin/login" element={<Login />} />
+                <Route path="/admin" element={
+                  <ProtectedRoute>
+                    <AdminDashboard />
+                  </ProtectedRoute>
+                }>
+                  <Route index element={<Navigate to="/admin/content" replace />} />
+                  <Route path="*" element={<Navigate to="/admin/content" replace />} />
                 </Route>
               </Routes>
             </main>
