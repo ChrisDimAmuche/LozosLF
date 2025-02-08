@@ -561,7 +561,7 @@ const HowItWorks = () => {
         </section>
 
         {/* Social Features */}
-        <section>
+        <section className="mb-20">
           <h2 className="text-4xl font-bold text-white mb-12">Social Features</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
@@ -597,7 +597,7 @@ const HowItWorks = () => {
         </section>
 
         {/* Download Button */}
-        <div className="flex justify-center pb-20">
+        <div className="flex justify-center py-12 mt-8">
           <button
             onClick={formatContentForDownload}
             className="flex items-center space-x-2 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-6 rounded-lg transition-colors"
