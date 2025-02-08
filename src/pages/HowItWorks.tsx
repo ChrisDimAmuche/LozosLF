@@ -45,7 +45,34 @@ const HowItWorks = () => {
 
         {/* Tournament System */}
         <section className="mb-20">
-          <h2 className="text-4xl font-bold text-white mb-12">The Tiered Tournament System</h2>
+          <h2 className="text-4xl font-bold text-white mb-8">The Tiered Tournament System</h2>
+          
+          {/* System Summary */}
+          <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-10 border border-white/10 mb-12">
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              The Tiered Tournament System is an innovative multi-level competition where players progress through 10 distinct stages. 
+              Each stage offers unique betting opportunities and strategic challenges. Players can invest in colored sections, 
+              predict which sections will be eliminated, or bet on advancing sections.
+            </p>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-black/30 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-yellow-500 mb-3">How It Progresses</h3>
+                <p className="text-gray-300">
+                  Starting with 10 colored sections, each round eliminates one section through random selection. 
+                  Players can participate in multiple ways: investing in sections for long-term returns, betting on 
+                  immediate drops, or predicting which sections will advance to the next stage.
+                </p>
+              </div>
+              <div className="bg-black/30 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-yellow-500 mb-3">Winning Strategy</h3>
+                <p className="text-gray-300">
+                  Success comes from combining different betting mechanisms. Players can spread investments across sections, 
+                  capitalize on drop predictions, and earn additional rewards through advance betting. All winnings are 
+                  distributed proportionally based on investment or bet size.
+                </p>
+              </div>
+            </div>
+          </div>
           
           {/* Tournament Structure */}
           <div className="grid gap-8 mb-12">
