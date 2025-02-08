@@ -76,7 +76,9 @@ const HowItWorks = () => {
                   <p className="text-gray-300">
                     The system features an innovative prize pool accumulation mechanism. Any unclaimed prizes or remaining amounts 
                     after distribution (including from sections with no investors) are automatically added to future tournament pools. 
-                    This creates a dynamic system where prize pools can grow significantly over time, offering increasingly attractive rewards.
+                    Every Thursday, a special tournament takes place where all accumulated prize money is distributed equally among 
+                    the winning section's participants. This weekly event requires a fixed entry fee (either $20 or $50, to be finalized), 
+                    and after distribution, the prize pool resets to zero, returning to the normal flexible investment strategy.
                   </p>
                 </div>
             </div>
@@ -224,7 +226,7 @@ const HowItWorks = () => {
             {/* Pool Distribution */}
             <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-10 border border-white/10">
               <h3 className="text-3xl font-bold text-yellow-500 mb-8">Pool Distribution Examples</h3>
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-4 gap-8">
                 <div className="bg-white/5 rounded-xl p-8 border border-white/10">
                   <h4 className="text-2xl font-semibold text-white mb-6">Section Investment</h4>
                   <div className="space-y-4">
@@ -278,6 +280,25 @@ const HowItWorks = () => {
                         <p className="text-gray-300">Carol's Bet: $100</p>
                         <p className="text-lg text-white mt-2">Calculation:</p>
                         <p className="text-yellow-500">($100 ÷ $400) × $2,000 = $500</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white/5 rounded-xl p-8 border border-white/10">
+                  <h4 className="text-2xl font-semibold text-white mb-6">Thursday Special</h4>
+                  <div className="space-y-4">
+                    <div className="bg-white/5 p-4 rounded-lg">
+                      <p className="text-yellow-500 mb-2">Weekly Tournament</p>
+                      <p className="text-lg text-white">Equal Split = Total Accumulated Pool ÷ Number of Winners</p>
+                    </div>
+                    <div className="bg-white/5 p-4 rounded-lg">
+                      <p className="text-yellow-500 mb-2">Example</p>
+                      <div className="space-y-2">
+                        <p className="text-gray-300">Accumulated Pool: $10,000</p>
+                        <p className="text-gray-300">Fixed Entry: $50</p>
+                        <p className="text-gray-300">Winners in Section: 20</p>
+                        <p className="text-lg text-white mt-2">Calculation:</p>
+                        <p className="text-yellow-500">$10,000 ÷ 20 = $500 each</p>
                       </div>
                     </div>
                   </div>
