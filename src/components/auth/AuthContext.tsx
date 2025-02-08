@@ -30,9 +30,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setIsAdmin(true);
       sessionStorage.setItem('lozo-admin-session', 'true');
       
-      // Get the return URL from the location state or default to /admin
-      const returnUrl = new URLSearchParams(location.search).get('returnUrl') || '/admin';
-      navigate(returnUrl);
+      // Get the return URL from the query params or location state
+      const params = new URLSearchParams(location.search);
+      const returnUrl = params.get('returnUrl') || 
+                       (location.state as { from?: string })?.from || 
+                       '/admin';
+      
+      // Decode the URL and navigate
+      navigate(decodeURIComponent(returnUrl));
       return true;
     }
     return false;
