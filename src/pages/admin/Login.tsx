@@ -20,6 +20,7 @@ const Login: React.FC = () => {
       if (!success) {
         setError('Invalid admin key');
       }
+      // No need to navigate here as AuthContext handles the navigation
     } catch (err) {
       setError('An error occurred during login');
     } finally {
