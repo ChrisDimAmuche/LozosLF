@@ -40,14 +40,29 @@ function App() {
                 <Route path="/how-it-works" element={<HowItWorks />} />
                 {/* Admin routes */}
                 <Route path="/admin/login" element={<Login />} />
-                <Route path="/admin" element={
+                <Route path="/admin/*" element={
                   <ProtectedRoute>
-                    <AdminDashboard />
+                    <Routes>
+                      <Route element={<AdminDashboard />}>
+                        <Route index element={<ContentManagement />} />
+                        <Route path="content" element={<ContentManagement />} />
+                        <Route path="images" element={<ImageManagement />} />
+                        <Route path="social" element={<CommunityManagement />} />
+                        <Route path="partners" element={<PartnersManagement />} />
+                        <Route path="founders" element={<FoundersManagement />} />
+                        <Route path="tokenomics" element={<TokenomicsManagement />} />
+                        <Route path="roadmap" element={<RoadmapManagement />} />
+                        <Route path="settings" element={
+                          <div>
+                            <h2 className="text-2xl font-bold text-white mb-6">Settings</h2>
+                            {/* Settings components will be added here */}
+                          </div>
+                        } />
+                        <Route path="*" element={<Navigate to="/admin/content" replace />} />
+                      </Route>
+                    </Routes>
                   </ProtectedRoute>
-                }>
-                  <Route index element={<Navigate to="/admin/content" replace />} />
-                  <Route path="*" element={<Navigate to="/admin/content" replace />} />
-                </Route>
+                } />
               </Routes>
             </main>
           </React.Suspense>
