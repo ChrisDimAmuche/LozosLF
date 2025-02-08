@@ -54,23 +54,31 @@ const HowItWorks = () => {
               Each stage offers unique betting opportunities and strategic challenges. Players can invest in colored sections, 
               predict which sections will be eliminated, or bet on advancing sections.
             </p>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-black/30 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-yellow-500 mb-3">How It Progresses</h3>
-                <p className="text-gray-300">
-                  Starting with 10 colored sections, each round eliminates one section through random selection. 
-                  Players can participate in multiple ways: investing in sections for long-term returns, betting on 
-                  immediate drops, or predicting which sections will advance to the next stage.
-                </p>
-              </div>
-              <div className="bg-black/30 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-yellow-500 mb-3">Winning Strategy</h3>
-                <p className="text-gray-300">
-                  Success comes from combining different betting mechanisms. Players can spread investments across sections, 
-                  capitalize on drop predictions, and earn additional rewards through advance betting. All winnings are 
-                  distributed proportionally based on investment or bet size.
-                </p>
-              </div>
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="bg-black/30 rounded-lg p-6">
+                  <h3 className="text-lg font-semibold text-yellow-500 mb-3">How It Progresses</h3>
+                  <p className="text-gray-300">
+                    Starting with 10 colored sections, each round eliminates one section through random selection. 
+                    Players can participate in multiple ways: investing in sections for long-term returns, betting on 
+                    immediate drops, or predicting which sections will advance to the next stage.
+                  </p>
+                </div>
+                <div className="bg-black/30 rounded-lg p-6">
+                  <h3 className="text-lg font-semibold text-yellow-500 mb-3">Winning Strategy</h3>
+                  <p className="text-gray-300">
+                    Success comes from combining different betting mechanisms. Players can spread investments across sections, 
+                    capitalize on drop predictions, and earn additional rewards through advance betting. All winnings are 
+                    distributed proportionally based on investment or bet size.
+                  </p>
+                </div>
+                <div className="bg-black/30 rounded-lg p-6">
+                  <h3 className="text-lg font-semibold text-yellow-500 mb-3">Growing Prize Pools</h3>
+                  <p className="text-gray-300">
+                    The system features an innovative prize pool accumulation mechanism. Any unclaimed prizes or remaining amounts 
+                    after distribution (including from sections with no investors) are automatically added to future tournament pools. 
+                    This creates a dynamic system where prize pools can grow significantly over time, offering increasingly attractive rewards.
+                  </p>
+                </div>
             </div>
           </div>
           
