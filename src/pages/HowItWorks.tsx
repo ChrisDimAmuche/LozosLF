@@ -194,13 +194,18 @@ const HowItWorks = () => {
                   <h4 className="text-2xl font-semibold text-white mb-6">Section Investment</h4>
                   <div className="space-y-4">
                     <div className="bg-white/5 p-4 rounded-lg">
-                      <p className="text-yellow-500 mb-2">Total Pool</p>
-                      <p className="text-2xl text-white">$500,000</p>
+                      <p className="text-yellow-500 mb-2">Formula</p>
+                      <p className="text-lg text-white">Win = (Your Investment ÷ Section Total) × Prize Pool</p>
                     </div>
                     <div className="bg-white/5 p-4 rounded-lg">
-                      <p className="text-gray-300 mb-2">Example Win</p>
-                      <p className="text-lg text-white">Alice's $1,000 investment</p>
-                      <p className="text-yellow-500 mt-2">= $33,333 return</p>
+                      <p className="text-yellow-500 mb-2">Example</p>
+                      <div className="space-y-2">
+                        <p className="text-gray-300">Total Prize Pool: $1,000</p>
+                        <p className="text-gray-300">Red Section Total: $100</p>
+                        <p className="text-gray-300">Alice's Investment: $20</p>
+                        <p className="text-lg text-white mt-2">Calculation:</p>
+                        <p className="text-yellow-500">($20 ÷ $100) × $1,000 = $200</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -208,13 +213,18 @@ const HowItWorks = () => {
                   <h4 className="text-2xl font-semibold text-white mb-6">Drop Betting</h4>
                   <div className="space-y-4">
                     <div className="bg-white/5 p-4 rounded-lg">
-                      <p className="text-yellow-500 mb-2">Pool Size</p>
-                      <p className="text-2xl text-white">$50,000</p>
+                      <p className="text-yellow-500 mb-2">Formula</p>
+                      <p className="text-lg text-white">Win = (Your Bet ÷ Total Correct Bets) × Prize Pool</p>
                     </div>
                     <div className="bg-white/5 p-4 rounded-lg">
-                      <p className="text-gray-300 mb-2">Example Win</p>
-                      <p className="text-lg text-white">Bob's $2,000 bet</p>
-                      <p className="text-yellow-500 mt-2">= $5,000 return</p>
+                      <p className="text-yellow-500 mb-2">Example</p>
+                      <div className="space-y-2">
+                        <p className="text-gray-300">Prize Pool: $500</p>
+                        <p className="text-gray-300">Total Correct Bets: $100</p>
+                        <p className="text-gray-300">Bob's Bet: $25</p>
+                        <p className="text-lg text-white mt-2">Calculation:</p>
+                        <p className="text-yellow-500">($25 ÷ $100) × $500 = $125</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -222,13 +232,18 @@ const HowItWorks = () => {
                   <h4 className="text-2xl font-semibold text-white mb-6">Advance Betting</h4>
                   <div className="space-y-4">
                     <div className="bg-white/5 p-4 rounded-lg">
-                      <p className="text-yellow-500 mb-2">Pool Size</p>
-                      <p className="text-2xl text-white">$100,000</p>
+                      <p className="text-yellow-500 mb-2">Formula</p>
+                      <p className="text-lg text-white">Win = (Your Bet ÷ Total Correct Predictions) × Prize Pool</p>
                     </div>
                     <div className="bg-white/5 p-4 rounded-lg">
-                      <p className="text-gray-300 mb-2">Example Win</p>
-                      <p className="text-lg text-white">Carol's $3,000 bet</p>
-                      <p className="text-yellow-500 mt-2">= $50,000 return</p>
+                      <p className="text-yellow-500 mb-2">Example</p>
+                      <div className="space-y-2">
+                        <p className="text-gray-300">Prize Pool: $1,000</p>
+                        <p className="text-gray-300">Total Correct Predictions: $200</p>
+                        <p className="text-gray-300">Carol's Bet: $50</p>
+                        <p className="text-lg text-white mt-2">Calculation:</p>
+                        <p className="text-yellow-500">($50 ÷ $200) × $1,000 = $250</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -284,6 +299,17 @@ const HowItWorks = () => {
                     <li>• Automatic spin after time</li>
                     <li>• Instant result verification</li>
                   </ul>
+                </div>
+                <div className="bg-white/5 rounded-xl p-8 border border-white/10">
+                  <h4 className="text-2xl font-semibold text-white mb-6">Example Scenario</h4>
+                  <div className="space-y-3 text-gray-300">
+                    <p>• Challenger sets $100 prize</p>
+                    <p>• 5 bettors join, each betting $10</p>
+                    <p>• Each picks 3 colors from wheel</p>
+                    <p>• If no winner: Challenger gets $150</p>
+                    <p>• If one wins: Gets full $100 prize</p>
+                    <p>• Others get $10 refund each</p>
+                  </div>
                 </div>
                 <div className="bg-white/5 rounded-xl p-8 border border-white/10">
                   <h4 className="text-2xl font-semibold text-white mb-6">Selection Process</h4>
