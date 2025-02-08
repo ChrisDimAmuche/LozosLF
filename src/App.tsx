@@ -38,12 +38,10 @@ function App() {
                 <Route path="/whitepaper" element={<Whitepaper />} />
                 <Route path="/presale" element={<Presale />} />
                 <Route path="/how-it-works" element={<HowItWorks />} />
+                <Route path="/admin/login" element={<Login />} />
                 <Route path="/admin/*" element={
                   <ProtectedRoute>
-                    <Routes>
-                      <Route path="login" element={<Login />} />
-                      <Route path="*" element={<AdminDashboard />} />
-                    </Routes>
+                    <AdminDashboard />
                   </ProtectedRoute>
                 } />
               </Routes>
