@@ -265,20 +265,22 @@ export const updateLogo = (logo: { url: string; alt: string; recommendedSize: st
 };
 
 export const getFavicon = (): Favicon => {
+  const faviconData = (data as unknown as { favicon?: Favicon }).favicon;
   return {
-    url: data.favicon?.url || '/vite.svg',
-    type: data.favicon?.type || 'image/png',
-    recommendedSize: data.favicon?.recommendedSize || '32x32 pixels (PNG format recommended)'
+    url: faviconData?.url || '/vite.svg',
+    type: faviconData?.type || 'image/png',
+    recommendedSize: faviconData?.recommendedSize || '32x32 pixels (PNG format recommended)'
   };
 };
 
 export const updateFavicon = (favicon: Favicon): void => {
-  data.favicon = favicon;
+  (data as unknown as { favicon: Favicon }).favicon = favicon;
   saveData();
   dataEvents.emit(EVENTS.FAVICON_UPDATED);
   
   // Update the favicon in the document
-  const linkElement = document.querySelector("link[rel*='icon']") || document.createElement('link');
+  const linkElement = (document.querySelector("link[rel*='icon']") as HTMLLinkElement) || 
+    document.createElement('link') as HTMLLinkElement;
   linkElement.type = favicon.type;
   linkElement.rel = 'icon';
   linkElement.href = favicon.url;
