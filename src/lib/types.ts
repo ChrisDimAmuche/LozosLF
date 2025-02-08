@@ -137,6 +137,12 @@ export interface FooterContent {
   showSocialLinks: boolean;
 }
 
+export interface Favicon {
+  url: string;
+  type: string;
+  recommendedSize: string;
+}
+
 export interface SiteSettings {
   id: string;
   showTokenomics: boolean;
@@ -148,6 +154,7 @@ export interface SiteSettings {
     alt: string;
     recommendedSize: string;
   };
+  favicon: Favicon;
 }
 
 // Add these to the content.json type
@@ -164,6 +171,7 @@ declare module '../data/content.json' {
     footerContent: FooterContent;
     documentationUrl: string;
     logo: Logo;
+    favicon: Favicon;
   }
   export default ContentJson;
 }
