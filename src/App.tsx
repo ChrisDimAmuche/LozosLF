@@ -49,11 +49,7 @@ function App() {
                 <Route path="/how-it-works" element={<HowItWorks />} />
                 {/* Admin routes */}
                 <Route path="/admin/login" element={<Login />} />
-                <Route path="/admin" element={
-                  <ProtectedRoute>
-                    <AdminDashboard />
-                  </ProtectedRoute>
-                } />
+                <Route path="/admin" element={<Navigate to="/admin/content" replace />} />
                 <Route path="/admin/content" element={
                   <ProtectedRoute>
                     <AdminDashboard>
