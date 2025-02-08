@@ -51,38 +51,38 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black"></div>
         </div>
         
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl sm:text-6xl font-bold text-white mb-6">
+        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
             Welcome to <span className="text-yellow-500">Lozo's LotoFair</span>
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto">
             The future of decentralized lottery and betting on Binance Smart Chain
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-xl mx-auto">
             <Link
               to="/presale"
-              className="flex items-center space-x-2 bg-yellow-500 text-black px-8 py-4 rounded-lg font-bold hover:bg-yellow-400 transition-all transform hover:scale-105"
+              className="flex items-center justify-center space-x-2 bg-yellow-500 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold hover:bg-yellow-400 transition-all transform hover:scale-105 w-full sm:w-auto"
             >
               <span>Join Presale</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
               to="/about"
-              className="flex items-center space-x-2 bg-white/10 text-white px-8 py-4 rounded-lg font-bold hover:bg-white/20 transition-all backdrop-blur-sm"
+              className="flex items-center justify-center space-x-2 bg-white/10 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold hover:bg-white/20 transition-all backdrop-blur-sm w-full sm:w-auto"
             >
               <span>Learn More</span>
               <Rocket className="w-5 h-5" />
             </Link>
             <Link
               to="/how-it-works"
-              className="flex items-center space-x-2 bg-white/10 text-white px-8 py-4 rounded-lg font-bold hover:bg-white/20 transition-all backdrop-blur-sm"
+              className="flex items-center justify-center space-x-2 bg-white/10 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold hover:bg-white/20 transition-all backdrop-blur-sm w-full sm:w-auto"
             >
               <span>How It Works</span>
               <BookOpen className="w-5 h-5" />
             </Link>
             <Link
               to="/community"
-              className="flex items-center space-x-2 bg-white/10 text-white px-8 py-4 rounded-lg font-bold hover:bg-white/20 transition-all backdrop-blur-sm"
+              className="flex items-center justify-center space-x-2 bg-white/10 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold hover:bg-white/20 transition-all backdrop-blur-sm w-full sm:w-auto"
             >
               <span>Join the community</span>
               <Users className="w-5 h-5" />
@@ -108,12 +108,12 @@ const Home = () => {
       </div>
 
       {/* Partners Section */}
-      <section className={`py-20 bg-black/80 ${tokenomics.visible ? 'mt-0' : 'mt-20'} transition-all duration-500`}>
+      <section className={`py-12 sm:py-20 bg-black/80 ${tokenomics.visible ? 'mt-0' : 'mt-12 sm:mt-20'} transition-all duration-500`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-white mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center text-white mb-8 sm:mb-12">
             Seeking <span className="text-yellow-500">partnerships with</span>
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {partners.map((partner) => (
               <div key={partner.id} className="bg-white/5 backdrop-blur-lg rounded-xl p-8 border border-white/10 hover:border-yellow-500/50 transition-all">
                 <img
