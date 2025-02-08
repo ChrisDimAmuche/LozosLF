@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link, Routes, Route, useLocation, Navigate, Outlet } from 'react-router-dom';
+import React, { useState } from 'react';
 import { useAuth } from '../../components/auth/AuthProvider';
 import { Layout, Settings, Image, MessageCircle, LogOut, Users, Building, Coins, Map } from 'lucide-react';
 import PartnersManagement from './components/PartnersManagement';
@@ -10,16 +9,12 @@ import TokenomicsManagement from './components/TokenomicsManagement';
 import RoadmapManagement from './components/RoadmapManagement';
 import CommunityManagement from './components/CommunityManagement';
 
-const AdminDashboard: React.FC = () => {
+const AdminDashboard = () => {
   const { logout } = useAuth();
-  const location = useLocation();
+  const [activeTab, setActiveTab] = useState('content');
 
   const handleLogout = () => {
     logout();
-  };
-
-  const isActive = (path: string) => {
-    return location.pathname.endsWith(path);
   };
 
   return (
@@ -32,108 +27,108 @@ const AdminDashboard: React.FC = () => {
           </div>
           <ul className="space-y-2">
             <li>
-              <Link
-                to="content"
+              <button
+                onClick={() => setActiveTab('content')}
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  isActive('content')
+                  activeTab === 'content'
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
               >
                 <Layout className="w-5 h-5 mr-3" />
                 Content Management
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                to="images"
+              <button
+                onClick={() => setActiveTab('images')}
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  isActive('images')
+                  activeTab === 'images'
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
               >
                 <Image className="w-5 h-5 mr-3" />
                 Image Management
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                to="social"
+              <button
+                onClick={() => setActiveTab('social')}
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  isActive('social')
+                  activeTab === 'social'
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
               >
                 <MessageCircle className="w-5 h-5 mr-3" />
                 Social Links
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                to="partners"
+              <button
+                onClick={() => setActiveTab('partners')}
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  isActive('partners')
+                  activeTab === 'partners'
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
               >
                 <Building className="w-5 h-5 mr-3" />
                 Partners
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                to="founders"
+              <button
+                onClick={() => setActiveTab('founders')}
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  isActive('founders')
+                  activeTab === 'founders'
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
               >
                 <Users className="w-5 h-5 mr-3" />
                 Founders
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                to="tokenomics"
+              <button
+                onClick={() => setActiveTab('tokenomics')}
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  isActive('tokenomics')
+                  activeTab === 'tokenomics'
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
               >
                 <Coins className="w-5 h-5 mr-3" />
                 Tokenomics
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                to="roadmap"
+              <button
+                onClick={() => setActiveTab('roadmap')}
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  isActive('roadmap')
+                  activeTab === 'roadmap'
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
               >
                 <Map className="w-5 h-5 mr-3" />
                 Roadmap
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                to="settings"
+              <button
+                onClick={() => setActiveTab('settings')}
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  isActive('settings')
+                  activeTab === 'settings'
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
               >
                 <Settings className="w-5 h-5 mr-3" />
                 Settings
-              </Link>
+              </button>
             </li>
           </ul>
           <div className="absolute bottom-4 left-0 w-64 px-3">
@@ -150,29 +145,23 @@ const AdminDashboard: React.FC = () => {
 
       {/* Main content */}
       <div className="flex-1 p-8">
-        <React.Suspense fallback={
-          <div className="flex items-center justify-center h-full">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-yellow-500"></div>
+        {activeTab === 'content' && <ContentManagement />}
+        {activeTab === 'images' && <ImageManagement />}
+        {activeTab === 'social' && <CommunityManagement />}
+        {activeTab === 'partners' && (
+          <PartnersManagement />
+        )}
+        {activeTab === 'founders' && (
+          <FoundersManagement />
+        )}
+        {activeTab === 'tokenomics' && <TokenomicsManagement />}
+        {activeTab === 'roadmap' && <RoadmapManagement />}
+        {activeTab === 'settings' && (
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-6">Settings</h2>
+            {/* Settings components will be added here */}
           </div>
-        }>
-          <Routes>
-            <Route index element={<Navigate to="./content" replace />} />
-            <Route path="content/*" element={<ContentManagement />} />
-            <Route path="images/*" element={<ImageManagement />} />
-            <Route path="social/*" element={<CommunityManagement />} />
-            <Route path="partners/*" element={<PartnersManagement />} />
-            <Route path="founders/*" element={<FoundersManagement />} />
-            <Route path="tokenomics/*" element={<TokenomicsManagement />} />
-            <Route path="roadmap/*" element={<RoadmapManagement />} />
-            <Route path="settings/*" element={
-              <div>
-                <h2 className="text-2xl font-bold text-white mb-6">Settings</h2>
-                {/* Settings components will be added here */}
-              </div>
-            } />
-            <Route path="*" element={<Navigate to="content" replace />} />
-          </Routes>
-        </React.Suspense>
+        )}
       </div>
     </div>
   );

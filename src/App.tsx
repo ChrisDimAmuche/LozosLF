@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import { AuthProvider } from './components/auth/AuthProvider';
@@ -15,15 +15,6 @@ const Presale = React.lazy(() => import('./pages/Presale'));
 const HowItWorks = React.lazy(() => import('./pages/HowItWorks'));
 const AdminDashboard = React.lazy(() => import('./pages/admin/AdminDashboard'));
 const Login = React.lazy(() => import('./pages/admin/Login'));
-
-// Lazy load admin components
-const ContentManagement = React.lazy(() => import('./pages/admin/components/ContentManagement'));
-const ImageManagement = React.lazy(() => import('./pages/admin/components/ImageManagement'));
-const CommunityManagement = React.lazy(() => import('./pages/admin/components/CommunityManagement'));
-const PartnersManagement = React.lazy(() => import('./pages/admin/components/PartnersManagement'));
-const FoundersManagement = React.lazy(() => import('./pages/admin/components/FoundersManagement'));
-const TokenomicsManagement = React.lazy(() => import('./pages/admin/components/TokenomicsManagement'));
-const RoadmapManagement = React.lazy(() => import('./pages/admin/components/RoadmapManagement'));
 
 function App() {
   return (
@@ -47,13 +38,15 @@ function App() {
                 <Route path="/whitepaper" element={<Whitepaper />} />
                 <Route path="/presale" element={<Presale />} />
                 <Route path="/how-it-works" element={<HowItWorks />} />
-                {/* Admin routes */}
-                <Route path="/admin/login" element={<Login />} />
-                <Route path="/admin/*" element={
-                  <ProtectedRoute>
-                    <AdminDashboard />
-                  </ProtectedRoute>
-                } />
+                <Route path="/login" element={<Login />} />
+                <Route
+                  path="/admin/*"
+                  element={
+                    <ProtectedRoute>
+                      <AdminDashboard />
+                    </ProtectedRoute>
+                  }
+                />
               </Routes>
             </main>
           </React.Suspense>
