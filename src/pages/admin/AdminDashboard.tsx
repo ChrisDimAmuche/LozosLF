@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { useAuth } from '../../components/auth/AuthProvider';
 import { Layout, Settings, Image, MessageCircle, LogOut, Users, Building, Coins, Map } from 'lucide-react';
 import PartnersManagement from './components/PartnersManagement';
@@ -11,10 +12,14 @@ import CommunityManagement from './components/CommunityManagement';
 
 const AdminDashboard = () => {
   const { logout } = useAuth();
-  const [activeTab, setActiveTab] = useState('content');
+  const location = useLocation();
 
   const handleLogout = () => {
     logout();
+  };
+
+  const isActive = (path: string) => {
+    return location.pathname === `/admin${path}`;
   };
 
   return (
@@ -27,108 +32,108 @@ const AdminDashboard = () => {
           </div>
           <ul className="space-y-2">
             <li>
-              <button
-                onClick={() => setActiveTab('content')}
+              <Link
+                to="/admin/content"
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  activeTab === 'content'
+                  isActive('/content')
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
               >
                 <Layout className="w-5 h-5 mr-3" />
                 Content Management
-              </button>
+              </Link>
             </li>
             <li>
-              <button
-                onClick={() => setActiveTab('images')}
+              <Link
+                to="/admin/images"
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  activeTab === 'images'
+                  isActive('/images')
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
               >
                 <Image className="w-5 h-5 mr-3" />
                 Image Management
-              </button>
+              </Link>
             </li>
             <li>
-              <button
-                onClick={() => setActiveTab('social')}
+              <Link
+                to="/admin/social"
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  activeTab === 'social'
+                  isActive('/social')
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
               >
                 <MessageCircle className="w-5 h-5 mr-3" />
                 Social Links
-              </button>
+              </Link>
             </li>
             <li>
-              <button
-                onClick={() => setActiveTab('partners')}
+              <Link
+                to="/admin/partners"
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  activeTab === 'partners'
+                  isActive('/partners')
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
               >
                 <Building className="w-5 h-5 mr-3" />
                 Partners
-              </button>
+              </Link>
             </li>
             <li>
-              <button
-                onClick={() => setActiveTab('founders')}
+              <Link
+                to="/admin/founders"
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  activeTab === 'founders'
+                  isActive('/founders')
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
               >
                 <Users className="w-5 h-5 mr-3" />
                 Founders
-              </button>
+              </Link>
             </li>
             <li>
-              <button
-                onClick={() => setActiveTab('tokenomics')}
+              <Link
+                to="/admin/tokenomics"
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  activeTab === 'tokenomics'
+                  isActive('/tokenomics')
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
               >
                 <Coins className="w-5 h-5 mr-3" />
                 Tokenomics
-              </button>
+              </Link>
             </li>
             <li>
-              <button
-                onClick={() => setActiveTab('roadmap')}
+              <Link
+                to="/admin/roadmap"
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  activeTab === 'roadmap'
+                  isActive('/roadmap')
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
               >
                 <Map className="w-5 h-5 mr-3" />
                 Roadmap
-              </button>
+              </Link>
             </li>
             <li>
-              <button
-                onClick={() => setActiveTab('settings')}
+              <Link
+                to="/admin/settings"
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  activeTab === 'settings'
+                  isActive('/settings')
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
               >
                 <Settings className="w-5 h-5 mr-3" />
                 Settings
-              </button>
+              </Link>
             </li>
           </ul>
           <div className="absolute bottom-4 left-0 w-64 px-3">
@@ -145,23 +150,22 @@ const AdminDashboard = () => {
 
       {/* Main content */}
       <div className="flex-1 p-8">
-        {activeTab === 'content' && <ContentManagement />}
-        {activeTab === 'images' && <ImageManagement />}
-        {activeTab === 'social' && <CommunityManagement />}
-        {activeTab === 'partners' && (
-          <PartnersManagement />
-        )}
-        {activeTab === 'founders' && (
-          <FoundersManagement />
-        )}
-        {activeTab === 'tokenomics' && <TokenomicsManagement />}
-        {activeTab === 'roadmap' && <RoadmapManagement />}
-        {activeTab === 'settings' && (
-          <div>
-            <h2 className="text-2xl font-bold text-white mb-6">Settings</h2>
-            {/* Settings components will be added here */}
-          </div>
-        )}
+        <Routes>
+          <Route path="/" element={<Navigate to="/admin/content" replace />} />
+          <Route path="/content" element={<ContentManagement />} />
+          <Route path="/images" element={<ImageManagement />} />
+          <Route path="/social" element={<CommunityManagement />} />
+          <Route path="/partners" element={<PartnersManagement />} />
+          <Route path="/founders" element={<FoundersManagement />} />
+          <Route path="/tokenomics" element={<TokenomicsManagement />} />
+          <Route path="/roadmap" element={<RoadmapManagement />} />
+          <Route path="/settings" element={
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-6">Settings</h2>
+              {/* Settings components will be added here */}
+            </div>
+          } />
+        </Routes>
       </div>
     </div>
   );
