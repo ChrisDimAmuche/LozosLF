@@ -10,7 +10,11 @@ import TokenomicsManagement from './components/TokenomicsManagement';
 import RoadmapManagement from './components/RoadmapManagement';
 import CommunityManagement from './components/CommunityManagement';
 
-const AdminDashboard = () => {
+interface AdminDashboardProps {
+  children?: React.ReactNode;
+}
+
+const AdminDashboard: React.FC<AdminDashboardProps> = ({ children }) => {
   const { logout } = useAuth();
   const location = useLocation();
 
