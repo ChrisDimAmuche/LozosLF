@@ -151,20 +151,21 @@ const AdminDashboard = () => {
       {/* Main content */}
       <div className="flex-1 p-8">
         <Routes>
-          <Route path="/" element={<Navigate to="/admin/content" replace />} />
-          <Route path="/content" element={<ContentManagement />} />
-          <Route path="/images" element={<ImageManagement />} />
-          <Route path="/social" element={<CommunityManagement />} />
-          <Route path="/partners" element={<PartnersManagement />} />
-          <Route path="/founders" element={<FoundersManagement />} />
-          <Route path="/tokenomics" element={<TokenomicsManagement />} />
-          <Route path="/roadmap" element={<RoadmapManagement />} />
-          <Route path="/settings" element={
+          <Route index element={<ContentManagement />} />
+          <Route path="content" element={<ContentManagement />} />
+          <Route path="images" element={<ImageManagement />} />
+          <Route path="social" element={<CommunityManagement />} />
+          <Route path="partners" element={<PartnersManagement />} />
+          <Route path="founders" element={<FoundersManagement />} />
+          <Route path="tokenomics" element={<TokenomicsManagement />} />
+          <Route path="roadmap" element={<RoadmapManagement />} />
+          <Route path="settings" element={
             <div>
               <h2 className="text-2xl font-bold text-white mb-6">Settings</h2>
               {/* Settings components will be added here */}
             </div>
           } />
+          <Route path="*" element={<Navigate to="/admin" replace />} />
         </Routes>
       </div>
     </div>
