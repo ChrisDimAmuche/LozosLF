@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dices, Target, Users, BarChart3, Timer, Coins, Award, Share2, Zap, Shield, ChartBar } from 'lucide-react';
+import { Dices, Target, Users, BarChart3, Award, Share2, Shield } from 'lucide-react';
 
 const HowItWorks = () => {
   return (
