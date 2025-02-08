@@ -10,11 +10,7 @@ import TokenomicsManagement from './components/TokenomicsManagement';
 import RoadmapManagement from './components/RoadmapManagement';
 import CommunityManagement from './components/CommunityManagement';
 
-interface AdminDashboardProps {
-  children?: React.ReactNode;
-}
-
-const AdminDashboard: React.FC<AdminDashboardProps> = ({ children }) => {
+const AdminDashboard: React.FC = () => {
   const { logout } = useAuth();
   const location = useLocation();
 
@@ -23,7 +19,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ children }) => {
   };
 
   const isActive = (path: string) => {
-    return location.pathname === `/admin${path}`;
+    return location.pathname.endsWith(path);
   };
 
   return (
@@ -37,9 +33,9 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ children }) => {
           <ul className="space-y-2">
             <li>
               <Link
-                to="/admin/content"
+                to="content"
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  isActive('/content')
+                  isActive('content')
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
@@ -50,9 +46,9 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ children }) => {
             </li>
             <li>
               <Link
-                to="/admin/images"
+                to="images"
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  isActive('/images')
+                  isActive('images')
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
@@ -63,9 +59,9 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ children }) => {
             </li>
             <li>
               <Link
-                to="/admin/social"
+                to="social"
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  isActive('/social')
+                  isActive('social')
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
@@ -76,9 +72,9 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ children }) => {
             </li>
             <li>
               <Link
-                to="/admin/partners"
+                to="partners"
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  isActive('/partners')
+                  isActive('partners')
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
@@ -89,9 +85,9 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ children }) => {
             </li>
             <li>
               <Link
-                to="/admin/founders"
+                to="founders"
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  isActive('/founders')
+                  isActive('founders')
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
@@ -102,9 +98,9 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ children }) => {
             </li>
             <li>
               <Link
-                to="/admin/tokenomics"
+                to="tokenomics"
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  isActive('/tokenomics')
+                  isActive('tokenomics')
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
@@ -115,9 +111,9 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ children }) => {
             </li>
             <li>
               <Link
-                to="/admin/roadmap"
+                to="roadmap"
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  isActive('/roadmap')
+                  isActive('roadmap')
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
@@ -128,9 +124,9 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ children }) => {
             </li>
             <li>
               <Link
-                to="/admin/settings"
+                to="settings"
                 className={`flex items-center w-full px-4 py-2 rounded-lg ${
-                  isActive('/settings')
+                  isActive('settings')
                     ? 'bg-yellow-500 text-black'
                     : 'text-gray-300 hover:bg-white/10'
                 }`}
@@ -159,7 +155,23 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ children }) => {
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-yellow-500"></div>
           </div>
         }>
-          {children}
+          <Routes>
+            <Route index element={<Navigate to="./content" replace />} />
+            <Route path="content/*" element={<ContentManagement />} />
+            <Route path="images/*" element={<ImageManagement />} />
+            <Route path="social/*" element={<CommunityManagement />} />
+            <Route path="partners/*" element={<PartnersManagement />} />
+            <Route path="founders/*" element={<FoundersManagement />} />
+            <Route path="tokenomics/*" element={<TokenomicsManagement />} />
+            <Route path="roadmap/*" element={<RoadmapManagement />} />
+            <Route path="settings/*" element={
+              <div>
+                <h2 className="text-2xl font-bold text-white mb-6">Settings</h2>
+                {/* Settings components will be added here */}
+              </div>
+            } />
+            <Route path="*" element={<Navigate to="content" replace />} />
+          </Routes>
         </React.Suspense>
       </div>
     </div>

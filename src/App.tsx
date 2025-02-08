@@ -49,67 +49,11 @@ function App() {
                 <Route path="/how-it-works" element={<HowItWorks />} />
                 {/* Admin routes */}
                 <Route path="/admin/login" element={<Login />} />
-                <Route path="/admin" element={<Navigate to="/admin/content" replace />} />
-                <Route path="/admin/content" element={
+                <Route path="/admin/*" element={
                   <ProtectedRoute>
-                    <AdminDashboard>
-                      <ContentManagement />
-                    </AdminDashboard>
+                    <AdminDashboard />
                   </ProtectedRoute>
                 } />
-                <Route path="/admin/images" element={
-                  <ProtectedRoute>
-                    <AdminDashboard>
-                      <ImageManagement />
-                    </AdminDashboard>
-                  </ProtectedRoute>
-                } />
-                <Route path="/admin/social" element={
-                  <ProtectedRoute>
-                    <AdminDashboard>
-                      <CommunityManagement />
-                    </AdminDashboard>
-                  </ProtectedRoute>
-                } />
-                <Route path="/admin/partners" element={
-                  <ProtectedRoute>
-                    <AdminDashboard>
-                      <PartnersManagement />
-                    </AdminDashboard>
-                  </ProtectedRoute>
-                } />
-                <Route path="/admin/founders" element={
-                  <ProtectedRoute>
-                    <AdminDashboard>
-                      <FoundersManagement />
-                    </AdminDashboard>
-                  </ProtectedRoute>
-                } />
-                <Route path="/admin/tokenomics" element={
-                  <ProtectedRoute>
-                    <AdminDashboard>
-                      <TokenomicsManagement />
-                    </AdminDashboard>
-                  </ProtectedRoute>
-                } />
-                <Route path="/admin/roadmap" element={
-                  <ProtectedRoute>
-                    <AdminDashboard>
-                      <RoadmapManagement />
-                    </AdminDashboard>
-                  </ProtectedRoute>
-                } />
-                <Route path="/admin/settings" element={
-                  <ProtectedRoute>
-                    <AdminDashboard>
-                      <div>
-                        <h2 className="text-2xl font-bold text-white mb-6">Settings</h2>
-                        {/* Settings components will be added here */}
-                      </div>
-                    </AdminDashboard>
-                  </ProtectedRoute>
-                } />
-                <Route path="/admin/*" element={<Navigate to="/admin/content" replace />} />
               </Routes>
             </main>
           </React.Suspense>
