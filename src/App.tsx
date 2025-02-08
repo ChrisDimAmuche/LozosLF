@@ -48,30 +48,72 @@ function App() {
                 <Route path="/presale" element={<Presale />} />
                 <Route path="/how-it-works" element={<HowItWorks />} />
                 {/* Admin routes */}
-                <Route path="/admin">
-                  <Route path="login" element={<Login />} />
-                  <Route element={
-                    <ProtectedRoute>
-                      <AdminDashboard />
-                    </ProtectedRoute>
-                  }>
-                    <Route index element={<ContentManagement />} />
-                    <Route path="content" element={<ContentManagement />} />
-                    <Route path="images" element={<ImageManagement />} />
-                    <Route path="social" element={<CommunityManagement />} />
-                    <Route path="partners" element={<PartnersManagement />} />
-                    <Route path="founders" element={<FoundersManagement />} />
-                    <Route path="tokenomics" element={<TokenomicsManagement />} />
-                    <Route path="roadmap" element={<RoadmapManagement />} />
-                    <Route path="settings" element={
+                <Route path="/admin/login" element={<Login />} />
+                <Route path="/admin" element={
+                  <ProtectedRoute>
+                    <AdminDashboard />
+                  </ProtectedRoute>
+                } />
+                <Route path="/admin/content" element={
+                  <ProtectedRoute>
+                    <AdminDashboard>
+                      <ContentManagement />
+                    </AdminDashboard>
+                  </ProtectedRoute>
+                } />
+                <Route path="/admin/images" element={
+                  <ProtectedRoute>
+                    <AdminDashboard>
+                      <ImageManagement />
+                    </AdminDashboard>
+                  </ProtectedRoute>
+                } />
+                <Route path="/admin/social" element={
+                  <ProtectedRoute>
+                    <AdminDashboard>
+                      <CommunityManagement />
+                    </AdminDashboard>
+                  </ProtectedRoute>
+                } />
+                <Route path="/admin/partners" element={
+                  <ProtectedRoute>
+                    <AdminDashboard>
+                      <PartnersManagement />
+                    </AdminDashboard>
+                  </ProtectedRoute>
+                } />
+                <Route path="/admin/founders" element={
+                  <ProtectedRoute>
+                    <AdminDashboard>
+                      <FoundersManagement />
+                    </AdminDashboard>
+                  </ProtectedRoute>
+                } />
+                <Route path="/admin/tokenomics" element={
+                  <ProtectedRoute>
+                    <AdminDashboard>
+                      <TokenomicsManagement />
+                    </AdminDashboard>
+                  </ProtectedRoute>
+                } />
+                <Route path="/admin/roadmap" element={
+                  <ProtectedRoute>
+                    <AdminDashboard>
+                      <RoadmapManagement />
+                    </AdminDashboard>
+                  </ProtectedRoute>
+                } />
+                <Route path="/admin/settings" element={
+                  <ProtectedRoute>
+                    <AdminDashboard>
                       <div>
                         <h2 className="text-2xl font-bold text-white mb-6">Settings</h2>
                         {/* Settings components will be added here */}
                       </div>
-                    } />
-                    <Route path="*" element={<Navigate to="/admin/content" replace />} />
-                  </Route>
-                </Route>
+                    </AdminDashboard>
+                  </ProtectedRoute>
+                } />
+                <Route path="/admin/*" element={<Navigate to="/admin/content" replace />} />
               </Routes>
             </main>
           </React.Suspense>
