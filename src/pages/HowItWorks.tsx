@@ -139,18 +139,18 @@ const HowItWorks = () => {
                   <h4 className="text-2xl font-semibold text-white mb-6">Starting Conditions</h4>
                   <div className="bg-white/5 p-6 rounded-xl border border-white/10 mb-6">
                     <p className="text-xl text-yellow-500 mb-2">Total Pool</p>
-                    <p className="text-3xl text-white">$100,000</p>
-                    <p className="text-gray-400">1,000 Players</p>
+                    <p className="text-3xl text-white">$1,000</p>
+                    <p className="text-gray-400">100 Players</p>
                   </div>
                   <div className="space-y-4">
                     <h5 className="text-xl text-white mb-4">Initial Distribution</h5>
                     <div className="grid gap-3">
                       {[
-                        { color: "Red", players: 150, amount: 15000 },
-                        { color: "Blue", players: 120, amount: 12000 },
-                        { color: "Green", players: 100, amount: 10000 },
-                        { color: "Yellow", players: 95, amount: 9500 },
-                        { color: "Purple", players: 90, amount: 9000 }
+                        { color: "Red", players: 15, amount: 150 },
+                        { color: "Blue", players: 12, amount: 120 },
+                        { color: "Green", players: 10, amount: 100 },
+                        { color: "Yellow", players: 9, amount: 90 },
+                        { color: "Purple", players: 9, amount: 90 }
                       ].map((section) => (
                         <div key={section.color} className="bg-white/5 p-4 rounded-lg border border-white/10 flex justify-between items-center">
                           <span className="text-gray-300">{section.color}</span>
