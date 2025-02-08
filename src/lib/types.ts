@@ -157,21 +157,23 @@ export interface SiteSettings {
   favicon: Favicon;
 }
 
-// Add these to the content.json type
+// Define the content.json structure
+export interface ContentJson {
+  content: ContentItem[];
+  social_links: SocialLink[];
+  images: Image[];
+  partners: Partner[];
+  founders: Founder[];
+  tokenomics: Tokenomics;
+  pageSettings: PageSettings;
+  roadmap: Roadmap;
+  footerContent: FooterContent;
+  documentationUrl: string;
+  logo: Logo;
+  favicon: Favicon;
+}
+
 declare module '../data/content.json' {
-  interface ContentJson {
-    content: ContentItem[];
-    social_links: SocialLink[];
-    images: Image[];
-    partners: Partner[];
-    founders: Founder[];
-    tokenomics: Tokenomics;
-    pageSettings: PageSettings;
-    roadmap: Roadmap;
-    footerContent: FooterContent;
-    documentationUrl: string;
-    logo: Logo;
-    favicon: Favicon;
-  }
-  export default ContentJson;
+  const content: ContentJson;
+  export default content;
 }
