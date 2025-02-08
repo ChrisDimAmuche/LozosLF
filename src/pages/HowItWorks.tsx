@@ -1,5 +1,175 @@
 import React from 'react';
-import { Dices, Target, Users, BarChart3, Award, Share2, Shield } from 'lucide-react';
+import { Dices, Target, Users, BarChart3, Award, Share2, Shield, Download } from 'lucide-react';
+
+const formatContentForDownload = () => {
+  const content = `
+LOZO - LOTOFAIR PLATFORM DOCUMENTATION
+
+Lozo: "Lotterie Optimisée pour le Zest Of chance" (Optimized Lottery for the Thrill of Chance)
+
+1. THE TIERED TOURNAMENT SYSTEM
+==============================
+
+Platform Overview
+---------------
+Core Features:
+• Transparent Lottery System
+• Dual Betting Mechanisms
+• Advanced Pool Distribution
+• Social Interaction Hub
+• Tournament Progression System
+• Flexible Participation – Players can replay each game multiple times
+
+Tournament Structure
+------------------
+Basic Setup:
+• 10 Distinct Sections (Colors)
+• 10 Tournament Levels
+• Time-scheduled tournaments
+• Verifiable random selection
+• Multiple round participation
+
+Section Colors:
+1. Red       6. Orange
+2. Blue      7. Pink
+3. Green     8. Brown
+4. Yellow    9. White
+5. Purple    10. Black
+
+Betting Mechanisms
+----------------
+A. Section Investment:
+• Players invest in any section
+• Multiple players per section allowed
+• No capacity limit
+• Investment determines winning share
+• Split based on percentage
+• Multiple entry allowed
+
+B. Drop Betting:
+• Predict next drop
+• Pre-spin betting window
+• Split pool by bet ratio
+• Unused pool carries over
+• Multiple betting rounds
+
+C. Advance Betting:
+• Predict advancing sections
+• Level-based predictions
+• Proportional rewards
+• Progressive difficulty
+• Multiple entry options
+
+Special Thursday Tournament
+-------------------------
+• Weekly tournament every Thursday
+• Fixed entry fee ($20 or $50 - TBD)
+• All accumulated prize money distributed equally
+• Prize pool resets after distribution
+• Returns to normal flexible investment strategy
+
+Prize Pool Distribution Examples
+-----------------------------
+1. Section Investment Example:
+   • Total Prize Pool: $1,000
+   • Red Section Total: $100
+   • Individual Investment: $20
+   • Winning Share: ($20 ÷ $100) × $1,000 = $200
+
+2. Drop Betting Example:
+   • Prize Pool: $500
+   • Total Correct Bets: $100
+   • Individual Bet: $25
+   • Winning Share: ($25 ÷ $100) × $500 = $125
+
+3. Advance Betting Example:
+   • Prize Pool: $2,000
+   • Total Correct Predictions: $400
+   • Individual Bet: $100
+   • Winning Share: ($100 ÷ $400) × $2,000 = $500
+
+4. Thursday Special Example:
+   • Accumulated Pool: $10,000
+   • Fixed Entry: $50
+   • Winners in Section: 20
+   • Individual Share: $10,000 ÷ 20 = $500 each
+
+2. THE COLOR CHALLENGE SYSTEM
+===========================
+
+Overview
+--------
+A color-based lottery system where a Challenger sets up a tournament with a prize pool, and Color Bettors attempt to predict three winning colors. Features refunds for losing bettors and rewards the challenger if no one predicts correctly.
+
+The Challenger:
+• Minimum entry: $10
+• Cap Quote: $50 or above
+• Proportional winnings below Cap Quote
+• Full reserve claim above Cap Quote
+• Claims entire reserve with matching contribution
+
+The Color Bettors:
+• Select 3 colors from 20 options
+• Fixed bet amount per tournament
+• Maximum 50% of prize pool bet
+• Equal split for correct predictions
+• Refund for incorrect predictions
+
+Game Mechanics
+-------------
+Timeline:
+• 30-minute initial window
+• +1 hour with player entry
+• Automatic spin after time
+• Instant result verification
+
+Selection Process:
+• 20-section color wheel
+• Random 3-color selection
+• Equal split for winners
+• Challenger backup win
+
+Example Scenario:
+• Challenger sets $750 prize
+• 15 bettors join, each betting $25
+• Each picks 3 colors from wheel
+• If no winner: Challenger gets $1,125
+• If one wins: Gets full $750 prize
+• Others get $25 refund each
+
+3. SOCIAL FEATURES
+================
+
+Chat System:
+• Public tournament chat
+• Section-specific rooms
+• Private messaging
+• Investment tracking
+• Real-time updates
+
+Group Features:
+• Team formation
+• Strategy sharing
+• Investment pooling
+• Performance tracking
+
+Dashboard Features:
+• Real-time tournament tracking
+• Investment distribution
+• Betting statistics
+• Historical data
+• Performance analytics`;
+
+  const blob = new Blob([content], { type: 'text/plain' });
+  const url = window.URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'lozo-lotofair-documentation.txt';
+  document.body.appendChild(a);
+  a.click();
+  window.URL.revokeObjectURL(url);
+  document.body.removeChild(a);
+};
 
 const HowItWorks = () => {
   return (
@@ -425,9 +595,6 @@ const HowItWorks = () => {
             </div>
           </div>
         </section>
-      </div>
-    </div>
-  );
-};
 
-export default HowItWorks;
+        {/* Download Button */}
+        <div className="flex justify-center pb-20"></div>
