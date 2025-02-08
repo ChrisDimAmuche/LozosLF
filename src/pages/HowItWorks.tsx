@@ -597,4 +597,18 @@ const HowItWorks = () => {
         </section>
 
         {/* Download Button */}
-        <div className="flex justify-center pb-20"></div>
+        <div className="flex justify-center pb-20">
+          <button
+            onClick={formatContentForDownload}
+            className="flex items-center space-x-2 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-6 rounded-lg transition-colors"
+          >
+            <Download className="w-5 h-5" />
+            <span>Download Documentation</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default HowItWorks;
