@@ -11,9 +11,10 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   const location = useLocation();
 
   if (!isAdmin) {
-    // Redirect to login page with the return url
-    const returnUrl = encodeURIComponent(location.pathname + location.search);
-    return <Navigate to={`/admin/login?returnUrl=${returnUrl}`} replace />;
+    // Redirect to login page with the return url and preserve any existing query params
+    const currentPath = location.pathname + location.search;
+    const returnUrl = encodeURIComponent(currentPath);
+    return <Navigate to={`/admin/login?returnUrl=${returnUrl}`} replace state={{ from: currentPath }} />;
   }
 
   return <>{children}</>;
