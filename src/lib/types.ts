@@ -173,7 +173,6 @@ export interface ContentJson {
   favicon: Favicon;
 }
 
-declare module '../data/content.json' {
-  const content: ContentJson;
-  export default content;
-}
+// Export the type for the content.json file
+declare const content: ContentJson;
+export default content;
