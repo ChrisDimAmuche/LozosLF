@@ -1,5 +1,5 @@
 import data from '../data/content.json';
-import { ContentItem, SocialLink, Image, Partner, Founder, Tokenomics, Roadmap, PageSettings } from './types';
+import { ContentItem, SocialLink, Image, Partner, Founder, Tokenomics, Roadmap, PageSettings, Favicon } from './types';
 import { dataEvents } from './events';
 
 // Save data to localStorage for persistence
@@ -25,7 +25,8 @@ export const EVENTS = {
   PRESALE_MODE_CHANGED: 'presale_mode_changed',
   SOCIAL_LINKS_UPDATED: 'social_links_updated',
   ROADMAP_CONTENT_CHANGED: 'roadmap_content_changed',
-  LOGO_UPDATED: 'logo_updated'
+  LOGO_UPDATED: 'logo_updated',
+  FAVICON_UPDATED: 'favicon_updated'
 } as const;
 
 export const getContent = (): ContentItem[] => {
@@ -261,6 +262,27 @@ export const updateLogo = (logo: { url: string; alt: string; recommendedSize: st
   data.logo = logo;
   saveData();
   dataEvents.emit(EVENTS.LOGO_UPDATED);
+};
+
+export const getFavicon = (): Favicon => {
+  return {
+    url: data.favicon?.url || '/vite.svg',
+    type: data.favicon?.type || 'image/png',
+    recommendedSize: data.favicon?.recommendedSize || '32x32 pixels (PNG format recommended)'
+  };
+};
+
+export const updateFavicon = (favicon: Favicon): void => {
+  data.favicon = favicon;
+  saveData();
+  dataEvents.emit(EVENTS.FAVICON_UPDATED);
+  
+  // Update the favicon in the document
+  const linkElement = document.querySelector("link[rel*='icon']") || document.createElement('link');
+  linkElement.type = favicon.type;
+  linkElement.rel = 'icon';
+  linkElement.href = favicon.url;
+  document.head.appendChild(linkElement);
 };
 
 export const deleteFounder = (id: string): boolean => {
