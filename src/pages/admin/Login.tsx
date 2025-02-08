@@ -1,28 +1,25 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../components/auth/AuthProvider';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useAuth } from '../../components/auth/AuthContext';
 import { Lock } from 'lucide-react';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [key, setKey] = useState('');
   const [error, setError] = useState('');
   const { login } = useAuth();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const returnUrl = searchParams.get('returnUrl') || '/admin';
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
     
-    try {
-      const success = await login(email, password);
-      if (success) {
-        navigate('/admin');
-      } else {
-        setError('Invalid credentials');
-      }
-    } catch (err) {
-      setError('An error occurred during login');
+    const success = login(key);
+    if (success) {
+      navigate(returnUrl);
+    } else {
+      setError('Invalid admin key');
     }
   };
 
@@ -33,7 +30,10 @@ const Login = () => {
           <div className="mx-auto h-12 w-12 text-yellow-500">
             <Lock className="w-full h-full" />
           </div>
-          <h2 className="mt-6 text-3xl font-bold text-white">Admin Login</h2>
+          <h2 className="mt-6 text-3xl font-bold text-white">Admin Access</h2>
+          <p className="mt-2 text-sm text-gray-400">
+            Enter your admin key to access the dashboard
+          </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           {error && (
@@ -41,44 +41,35 @@ const Login = () => {
               {error}
             </div>
           )}
-          <div className="space-y-4">
-            <div>
-              <label htmlFor="email" className="text-sm font-medium text-gray-300">
-                Email address
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="appearance-none relative block w-full px-3 py-2 mt-1 border border-white/10 bg-white/5 text-white rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
-              />
-            </div>
-            <div>
-              <label htmlFor="password" className="text-sm font-medium text-gray-300">
-                Password
-              </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="appearance-none relative block w-full px-3 py-2 mt-1 border border-white/10 bg-white/5 text-white rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
-              />
-            </div>
+          <div>
+            <label htmlFor="key" className="text-sm font-medium text-gray-300">
+              Admin Key
+            </label>
+            <input
+              id="key"
+              name="key"
+              type="password"
+              required
+              value={key}
+              onChange={(e) => setKey(e.target.value)}
+              className="appearance-none relative block w-full px-3 py-2 mt-1 border border-white/10 bg-white/5 text-white rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
+              placeholder="Enter your admin key"
+            />
           </div>
 
           <button
             type="submit"
             className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-black bg-yellow-500 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
           >
-            Sign in
+            Access Dashboard
           </button>
         </form>
+
+        <div className="text-sm text-center text-gray-400">
+          <p>You can also access the admin dashboard by adding</p>
+          <p className="mt-1 font-mono bg-black/20 px-3 py-1 rounded">?key=your-admin-key</p>
+          <p className="mt-1">to any admin page URL</p>
+        </div>
       </div>
     </div>
   );
