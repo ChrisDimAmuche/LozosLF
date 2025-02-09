@@ -21,17 +21,17 @@ const About = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-10 sm:mb-16">
-          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 lg:p-8 border border-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-10 sm:mb-16 auto-rows-fr">
+          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 lg:p-8 border border-white/10 flex flex-col min-h-[200px]">
             <Shield className="w-10 h-10 sm:w-12 sm:h-12 text-yellow-500 mb-4" />
-            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Secure & Transparent</h3>
-            <p className="text-sm sm:text-base text-gray-300">
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 line-clamp-2">Secure & Transparent</h3>
+            <p className="text-sm sm:text-base text-gray-300 flex-grow overflow-y-auto">
               Built on blockchain technology, ensuring complete transparency and security for all transactions
               and lottery draws.
             </p>
           </div>
           
-          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 lg:p-8 border border-white/10">
+          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 lg:p-8 border border-white/10 flex flex-col min-h-[200px]">
             <Zap className="w-10 h-10 sm:w-12 sm:h-12 text-yellow-500 mb-4" />
             <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Fast & Efficient</h3>
             <p className="text-sm sm:text-base text-gray-300">
@@ -40,7 +40,7 @@ const About = () => {
             </p>
           </div>
           
-          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 lg:p-8 border border-white/10">
+          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 lg:p-8 border border-white/10 flex flex-col min-h-[200px]">
             <Lock className="w-10 h-10 sm:w-12 sm:h-12 text-yellow-500 mb-4" />
             <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Fair & Decentralized</h3>
             <p className="text-sm sm:text-base text-gray-300">
@@ -74,8 +74,8 @@ const About = () => {
           
           <div className="max-w-3xl mx-auto">
             {founders.map((founder) => (
-              <div key={founder.id} className="bg-white/5 backdrop-blur-lg rounded-xl p-3 sm:p-4 md:p-6 lg:p-8 border border-white/10">
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-4 sm:gap-6 md:gap-8">
+              <div key={founder.id} className="bg-white/5 backdrop-blur-lg rounded-xl p-3 sm:p-4 md:p-6 lg:p-8 border border-white/10 overflow-hidden">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4 sm:gap-6 md:gap-8 min-h-[200px]">
                   <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 overflow-hidden rounded-xl flex-shrink-0">
                     <img
                       src={founder.image}
@@ -86,7 +86,7 @@ const About = () => {
                   <div className="flex-1 text-center md:text-left">
                     <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{founder.name}</h3>
                     <p className="text-yellow-500 text-base sm:text-lg mb-3 sm:mb-4">{founder.title}</p>
-                    <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6">{founder.description}</p>
+                    <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6 overflow-y-auto">{founder.description}</p>
                     <div className="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4 mb-4 sm:mb-6">
                       {founder.socialLinks.map((link, index) => (
                         <a
