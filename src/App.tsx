@@ -1,25 +1,20 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
-import { AuthProvider } from './components/auth/AuthProvider';
-import ProtectedRoute from './components/auth/ProtectedRoute';
-import { Routes, Route } from 'react-router-dom';
 
-// Lazy load pages
-const Home = React.lazy(() => import('./pages/Home'));
-const About = React.lazy(() => import('./pages/About'));
-const Vision = React.lazy(() => import('./pages/Vision'));
-const Community = React.lazy(() => import('./pages/Community'));
-const Whitepaper = React.lazy(() => import('./pages/Whitepaper'));
-const Presale = React.lazy(() => import('./pages/Presale'));
-const HowItWorks = React.lazy(() => import('./pages/HowItWorks'));
-const AdminDashboard = React.lazy(() => import('./pages/admin/AdminDashboard'));
-const Login = React.lazy(() => import('./pages/admin/Login'));
+// Lazy load pages with improved chunk naming
+const Home = React.lazy(() => import('./pages/Home' /* webpackChunkName: "home" */));
+const About = React.lazy(() => import('./pages/About' /* webpackChunkName: "about" */));
+const Vision = React.lazy(() => import('./pages/Vision' /* webpackChunkName: "vision" */));
+const Community = React.lazy(() => import('./pages/Community' /* webpackChunkName: "community" */));
+const Whitepaper = React.lazy(() => import('./pages/Whitepaper' /* webpackChunkName: "whitepaper" */));
+const Presale = React.lazy(() => import('./pages/Presale' /* webpackChunkName: "presale" */));
+const HowItWorks = React.lazy(() => import('./pages/HowItWorks' /* webpackChunkName: "how-it-works" */));
 
 function App() {
   return (
-    <AuthProvider>
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-black to-gray-900">
         <Navbar />
         <React.Suspense 
           fallback={
@@ -28,24 +23,15 @@ function App() {
             </div>
           }
         >
-          <main className="pt-16">
+          <main className="flex-grow pt-16 px-4 sm:px-6 lg:px-8">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="about" element={<About />} />
-              <Route path="vision/:id" element={<Vision />} />
-              <Route path="community" element={<Community />} />
-              <Route path="whitepaper" element={<Whitepaper />} />
-              <Route path="presale" element={<Presale />} />
-              <Route path="how-it-works" element={<HowItWorks />} />
-              <Route path="login" element={<Login />} />
-              <Route
-                path="admin/*"
-                element={
-                  <ProtectedRoute>
-                    <AdminDashboard />
-                  </ProtectedRoute>
-                }
-              />
+              <Route path="/about" element={<About />} />
+              <Route path="/vision/:id" element={<Vision />} />
+              <Route path="/community" element={<Community />} />
+              <Route path="/whitepaper" element={<Whitepaper />} />
+              <Route path="/presale" element={<Presale />} />
+              <Route path="/how-it-works" element={<HowItWorks />} />
             </Routes>
           </main>
         </React.Suspense>
