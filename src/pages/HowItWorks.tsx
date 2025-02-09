@@ -194,7 +194,7 @@ const HowItWorks = () => {
         <section className="mb-20">
           <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 sm:p-8 lg:p-10 border border-white/10">
             <h2 className="text-4xl font-bold text-white mb-8">Platform Overview</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 auto-rows-fr">
               {[
                 { icon: <Shield className="w-8 h-8" />, title: "Transparent Lottery System", desc: "Fully verifiable and fair gaming system" },
                 { icon: <Target className="w-8 h-8" />, title: "Dual Betting Mechanisms", desc: "Section investment and drop betting options" },
@@ -203,10 +203,10 @@ const HowItWorks = () => {
                 { icon: <Award className="w-8 h-8" />, title: "Tournament Progression", desc: "Multi-level competitive structure" },
                 { icon: <Share2 className="w-8 h-8" />, title: "Flexible Participation", desc: "Multiple entry opportunities per game" }
               ].map((feature, index) => (
-                <div key={index} className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10 hover:border-yellow-500/50 transition-colors">
+                <div key={index} className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10 hover:border-yellow-500/50 transition-colors flex flex-col min-h-[180px]">
                   <div className="text-yellow-500 mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.desc}</p>
+                  <h3 className="text-xl font-semibold text-white mb-2 line-clamp-2">{feature.title}</h3>
+                  <p className="text-gray-400 flex-grow overflow-y-auto">{feature.desc}</p>
                 </div>
               ))}
             </div>
@@ -224,16 +224,16 @@ const HowItWorks = () => {
               Each stage offers unique betting opportunities and strategic challenges. Players can invest in colored sections, 
               predict which sections will be eliminated, or bet on advancing sections.
             </p>
-              <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-                <div className="bg-black/30 rounded-lg p-4 sm:p-6">
+              <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 auto-rows-fr">
+                <div className="bg-black/30 rounded-lg p-4 sm:p-6 flex flex-col min-h-[200px]">
                   <h3 className="text-lg font-semibold text-yellow-500 mb-3">How It Progresses</h3>
-                  <p className="text-gray-300">
+                  <p className="text-gray-300 flex-grow overflow-y-auto">
                     Starting with 10 colored sections, each round eliminates one section through random selection. 
                     Players can participate in multiple ways: investing in sections for long-term returns, betting on 
                     immediate drops, or predicting which sections will advance to the next stage.
                   </p>
                 </div>
-                <div className="bg-black/30 rounded-lg p-6">
+                <div className="bg-black/30 rounded-lg p-4 sm:p-6 flex flex-col min-h-[200px]">
                   <h3 className="text-lg font-semibold text-yellow-500 mb-3">Winning Strategy</h3>
                   <p className="text-gray-300">
                     Success comes from combining different betting mechanisms. Players can spread investments across sections, 
@@ -241,7 +241,7 @@ const HowItWorks = () => {
                     distributed proportionally based on investment or bet size.
                   </p>
                 </div>
-                <div className="bg-black/30 rounded-lg p-6">
+                <div className="bg-black/30 rounded-lg p-4 sm:p-6 flex flex-col min-h-[200px]">
                   <h3 className="text-lg font-semibold text-yellow-500 mb-3">Growing Prize Pools</h3>
                   <p className="text-gray-300">
                     The system features an innovative prize pool accumulation mechanism. Any unclaimed prizes or remaining amounts 
@@ -256,7 +256,7 @@ const HowItWorks = () => {
           
           {/* Tournament Structure */}
           <div className="grid gap-8 mb-12">
-            <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-10 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 sm:p-8 lg:p-10 border border-white/10 overflow-hidden">
               <h3 className="text-3xl font-bold text-yellow-500 mb-8">Tournament Structure</h3>
               <div className="grid md:grid-cols-2 gap-12">
                 <div>
@@ -304,7 +304,7 @@ const HowItWorks = () => {
             <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-10 border border-white/10">
               <h3 className="text-3xl font-bold text-yellow-500 mb-8">Betting Mechanisms</h3>
               <div className="grid md:grid-cols-3 gap-8">
-                <div className="bg-white/5 rounded-xl p-8 border border-white/10">
+                <div className="bg-white/5 rounded-xl p-4 sm:p-6 lg:p-8 border border-white/10 flex flex-col min-h-[200px]">
                   <h4 className="text-2xl font-semibold text-white mb-6">Section Investment</h4>
                   <ul className="space-y-3 text-gray-300">
                     <li>• Players invest in any section</li>
@@ -315,7 +315,7 @@ const HowItWorks = () => {
                     <li>• Multiple entry allowed</li>
                   </ul>
                 </div>
-                <div className="bg-white/5 rounded-xl p-8 border border-white/10">
+                <div className="bg-white/5 rounded-xl p-4 sm:p-6 lg:p-8 border border-white/10 flex flex-col min-h-[200px]">
                   <h4 className="text-2xl font-semibold text-white mb-6">Drop Betting</h4>
                   <ul className="space-y-3 text-gray-300">
                     <li>• Predict next drop</li>
@@ -325,7 +325,7 @@ const HowItWorks = () => {
                     <li>• Multiple betting rounds</li>
                   </ul>
                 </div>
-                <div className="bg-white/5 rounded-xl p-8 border border-white/10">
+                <div className="bg-white/5 rounded-xl p-4 sm:p-6 lg:p-8 border border-white/10 flex flex-col min-h-[200px]">
                   <h4 className="text-2xl font-semibold text-white mb-6">Advance Betting</h4>
                   <ul className="space-y-3 text-gray-300">
                     <li>• Predict advancing sections</li>
@@ -397,7 +397,7 @@ const HowItWorks = () => {
             <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-10 border border-white/10">
               <h3 className="text-3xl font-bold text-yellow-500 mb-8">Pool Distribution Examples</h3>
               <div className="grid md:grid-cols-4 gap-8">
-                <div className="bg-white/5 rounded-xl p-8 border border-white/10">
+                <div className="bg-white/5 rounded-xl p-4 sm:p-6 lg:p-8 border border-white/10 flex flex-col min-h-[200px]">
                   <h4 className="text-2xl font-semibold text-white mb-6">Section Investment</h4>
                   <div className="space-y-4">
                     <div className="bg-white/5 p-4 rounded-lg">
