@@ -30,19 +30,19 @@ const CommunityIcon: React.FC<{
       <>
         <button
           onClick={() => setShowModal(true)}
-          className="flex flex-col items-center space-y-2 p-8 bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 hover:border-yellow-500/50 transition-all"
+          className="flex flex-col items-center space-y-3 p-4 sm:p-6 md:p-8 bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 hover:border-yellow-500/50 transition-all"
         >
-          <div className="w-16 h-16 text-yellow-500">{icon}</div>
-          <span className="text-white font-semibold">{name}</span>
+          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-yellow-500">{icon}</div>
+          <span className="text-white font-semibold text-sm sm:text-base">{name}</span>
         </button>
 
         {showModal && (
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50">
-            <div className="bg-white/5 backdrop-blur-lg rounded-xl p-8 border border-white/10 max-w-md mx-4">
+            <div className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 md:p-8 border border-white/10 max-w-md mx-4 w-[90%] sm:w-auto">
               <div className="flex flex-col items-center text-center space-y-4">
-                <div className="w-20 h-20 text-yellow-500">{icon}</div>
-                <h3 className="text-2xl font-bold text-white">{name} Coming Soon!</h3>
-                <p className="text-gray-300">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 text-yellow-500">{icon}</div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white">{name} Coming Soon!</h3>
+                <p className="text-gray-300 text-sm sm:text-base">
                   {comingSoonMessage || `Our ${name} community is launching soon! Stay tuned for updates and exclusive content.`}
                 </p>
                 <button
@@ -64,10 +64,10 @@ const CommunityIcon: React.FC<{
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex flex-col items-center space-y-2 p-8 bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 hover:border-yellow-500/50 transition-all"
+      className="flex flex-col items-center space-y-3 p-4 sm:p-6 md:p-8 bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 hover:border-yellow-500/50 transition-all"
     >
-      <div className="w-16 h-16 text-yellow-500">{icon}</div>
-      <span className="text-white font-semibold">{name}</span>
+      <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-yellow-500">{icon}</div>
+      <span className="text-white font-semibold text-sm sm:text-base">{name}</span>
     </a>
   );
 };
@@ -110,15 +110,15 @@ const Community = () => {
         </div>
 
         <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
             Join Our <span className="text-yellow-500">Community</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4 sm:px-0">
             Connect with fellow enthusiasts, stay updated with the latest news, and be part of our growing community across different platforms.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {communityLinks.map((link) => (
             <CommunityIcon
               key={link.name}
