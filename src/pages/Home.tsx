@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[600px] h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[600px] h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden py-12 sm:py-16 lg:py-20">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=2832"
@@ -58,7 +58,7 @@ const Home = () => {
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto">
             The future of decentralized lottery and betting on Binance Smart Chain
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-2xl mx-auto flex-wrap">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-3xl mx-auto flex-wrap px-4 sm:px-6">
             <Link
               to="/presale"
               className="flex items-center justify-center space-x-2 bg-yellow-500 text-black px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg font-bold hover:bg-yellow-400 transition-all transform hover:scale-105 w-full sm:w-[calc(50%-0.5rem)] lg:w-auto min-w-[160px] sm:min-w-[200px] text-sm sm:text-base"
@@ -108,21 +108,23 @@ const Home = () => {
       </div>
 
       {/* Partners Section */}
-      <section className={`py-10 sm:py-16 lg:py-20 bg-black/80 ${tokenomics.visible ? 'mt-0' : 'mt-10 sm:mt-16 lg:mt-20'} transition-all duration-500`}>
+      <section className={`py-12 sm:py-16 lg:py-24 bg-black/80 ${tokenomics.visible ? 'mt-0' : 'mt-12 sm:mt-16 lg:mt-24'} transition-all duration-500`}>
         <div className="container max-w-6xl mx-auto px-3 sm:px-4 lg:px-6">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-white mb-6 sm:mb-8 md:mb-12">
             Seeking <span className="text-yellow-500">partnerships with</span>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 auto-rows-fr">
             {partners.map((partner) => (
-              <div key={partner.id} className="bg-white/5 backdrop-blur-lg rounded-xl p-3 sm:p-4 md:p-6 lg:p-8 border border-white/10 hover:border-yellow-500/50 transition-all flex flex-col items-center justify-between min-h-[200px] overflow-hidden">
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="h-10 sm:h-12 w-auto mx-auto mb-4 sm:mb-6"
-                />
-                <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-3 sm:mb-4 line-clamp-2">{partner.name}</h3>
-                <p className="text-sm sm:text-base text-gray-300 text-center flex-grow overflow-y-auto">{partner.description}</p>
+              <div key={partner.id} className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 lg:p-8 border border-white/10 hover:border-yellow-500/50 transition-all flex flex-col items-center min-h-[250px] overflow-hidden">
+                <div className="w-full h-20 flex items-center justify-center mb-6">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="max-h-full max-w-[80%] object-contain"
+                  />
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-4">{partner.name}</h3>
+                <p className="text-sm sm:text-base text-gray-300 text-center flex-grow overflow-y-auto px-2">{partner.description}</p>
               </div>
             ))}
           </div>
@@ -130,7 +132,7 @@ const Home = () => {
       </section>
 
       {/* Roadmap Section */}
-      <div className={`transition-all duration-500 ${roadmap.visible ? 'opacity-100 max-h-[2000px]' : 'opacity-0 max-h-0 overflow-hidden'}`}>
+      <div className={`transition-all duration-700 ${roadmap.visible ? 'opacity-100 max-h-[5000px]' : 'opacity-0 max-h-0 overflow-hidden'}`}>
         <RoadmapSection phases={roadmap.phases} />
       </div>
     </div>
