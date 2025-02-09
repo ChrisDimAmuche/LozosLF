@@ -17,15 +17,16 @@ export const useAuth = () => {
 };
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    return !!localStorage.getItem('auth_token'); // ✅ Check token on load
+  });
 
   useEffect(() => {
     const token = localStorage.getItem('auth_token');
-    setIsAuthenticated(!!token);
+    setIsAuthenticated(!!token); // ✅ Ensures authentication state is in sync
   }, []);
 
   const login = async (email: string, password: string) => {
-    // For demo purposes, hardcode admin credentials
     if (email === 'admin@lozoslotofair.com' && password === 'admin123') {
       localStorage.setItem('auth_token', 'demo_token');
       setIsAuthenticated(true);

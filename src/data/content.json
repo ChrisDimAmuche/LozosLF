@@ -13,7 +13,7 @@
     {
       "id": "1",
       "platform": "Telegram",
-      "url": "https://t.me/lozoslotofair",
+      "url": "",
       "icon": "message-circle",
       "position": "top",
       "comingSoonMessage": "Join our Telegram community for real-time updates and discussions with fellow members!"
@@ -21,7 +21,7 @@
     {
       "id": "2",
       "platform": "WhatsApp",
-      "url": "https://whatsapp.com/channel/lozoslotofair",
+      "url": "",
       "icon": "phone",
       "position": "top",
       "comingSoonMessage": "Join our WhatsApp channel for instant updates and community discussions!"
@@ -29,7 +29,7 @@
     {
       "id": "3",
       "platform": "X",
-      "url": "https://x.com/lozoslotofair",
+      "url": "https://x.com/LozoLotoFair",
       "icon": "twitter",
       "position": "bottom",
       "comingSoonMessage": "Follow us on X for the latest updates, announcements, and community discussions!"
@@ -37,7 +37,7 @@
     {
       "id": "4",
       "platform": "TikTok",
-      "url": "https://tiktok.com/@lozoslotofair",
+      "url": "https://www.tiktok.com/@lozolotofair?is_from_webapp=1&sender_device=pc",
       "icon": "video",
       "position": "bottom",
       "comingSoonMessage": "Get ready for exclusive behind-the-scenes content and exciting updates on our TikTok channel!"
@@ -57,41 +57,52 @@
       "id": "1",
       "name": "Binance",
       "logo": "https://cryptologos.cc/logos/binance-coin-bnb-logo.png",
-      "description": "The world's leading blockchain ecosystem and cryptocurrency infrastructure provider."
+      "description": "One of the largest cryptocurrency exchanges in the world."
     },
     {
       "id": "2",
       "name": "BC.Game",
-      "logo": "https://bcgame.com/assets/logo.svg",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFs9r10v6_N56QnZiqWtCZgGeGiZVPIyCiuQ&s",
       "description": "A pioneering crypto gaming platform known for innovative blockchain-based gaming solutions."
+    },
+    {
+      "id": "3",
+      "name": "Decentraland",
+      "logo": "https://cryptologos.cc/logos/decentraland-mana-logo.png",
+      "description": "One of the first fully decentralized virtual worlds built on the Ethereum blockchain."
     }
   ],
   "founders": [
     {
       "id": "1",
-      "name": "John Smith",
-      "title": "CEO & Founder",
-      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1000",
-      "description": "Blockchain enthusiast with 10+ years of experience in gaming and cryptocurrency.",
-      "email": "john@lozoslotofair.com",
+      "name": "Christaugunus Dim",
+      "title": "CEO & Co-Creator",
+      "image": "https://media.licdn.com/dms/image/v2/D4E03AQHg_g78L51iEQ/profile-displayphoto-shrink_400_400/B4EZTqIk_EGYAg-/0/1739094905329?e=1744848000&v=beta&t=XcFfn7UC_1ie_0rg5tspx9F_JiVnpZlR_ukIMvyytBs",
+      "description": "Blockchain Researcher, Analyst & Community Builder",
+      "email": "christaugunusd@gmail.com",
       "vision": "Lozo's LotoFair: A Betting Revolution by the People, for the People\n\nLozo's LotoFair is not just another betting platform it is a groundbreaking system designed to give full control back to the bettors themselves. Unlike traditional lotteries and betting systems where operators dictate the prizes and outcomes, Lozo's LotoFair ensures that everything is entirely driven by the participants.\n\nWho sets the money or the prize to be won? The bettors themselves.\nWho controls who wins or loses? No one only the collective participation of the players determines the outcomes.\n\nThis is a system built for the people, and now, I want it to be by the people. My vision is to create a truly decentralized betting ecosystem where fairness, transparency, and community governance are the core principles. This is why I am calling on everyone to actively participate as we build Lozo's LotoFair together. Through our growing community, we will ensure that this platform remains a people-powered betting system one that is free from centralized control, driven solely by the bettors, and ultimately owned by those who play.\n\nLet's build the future of betting where fairness isn't promised; it's guaranteed by the very people who play.",
       "showVisionButton": true,
       "socialLinks": [
         {
           "platform": "twitter",
-          "url": "https://twitter.com/johnsmith",
-          "icon": "Twitter"
+          "url": "https://x.com/LozoLotoFair",
+          "icon": "X(formerly Twitter)"
         },
         {
           "platform": "linkedin",
-          "url": "https://linkedin.com/in/johnsmith",
+          "url": "https://www.linkedin.com/in/chrisdim-2a779934b",
           "icon": "Linkedin"
+        },
+        {
+          "platform": "WhatsApp",
+          "url": "https://wa.me/+233559109096",
+          "icon": "WhatsApp"
         }
       ]
     }
   ],
   "tokenomics": {
-    "visible": true,
+    "visible": false,
     "name": "Lozo's LotoFair",
     "symbol": "LLF (Lozo)",
     "totalSupply": 2000000000,

@@ -17,12 +17,12 @@ const Login = () => {
     try {
       const success = await login(email, password);
       if (success) {
-        navigate('/admin'); // Ensure correct navigation with HashRouter
+        navigate('admin', { replace: true }); // ✅ Fixed for HashRouter
       } else {
-        setError('Invalid credentials');
+        setError('Invalid email or password.');
       }
-    } catch (err) {
-      setError('An error occurred during login. Please try again.');
+    } catch (err: any) {
+      setError(err.message || 'Login failed. Please try again.');
     }
   };
 
