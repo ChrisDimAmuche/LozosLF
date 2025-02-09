@@ -48,20 +48,20 @@ const TokenomicsSection: React.FC<TokenomicsProps> = ({
             <h3 className="text-base sm:text-lg font-semibold text-white mb-2">Token Name</h3>
             <p className="text-sm sm:text-base text-gray-300">{name}</p>
           </div>
-          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 border border-white/10 flex flex-col">
             <CircleDollarSign className="w-8 h-8 text-yellow-500 mb-4" />
-            <h3 className="text-lg font-semibold text-white mb-2">Symbol</h3>
-            <p className="text-gray-300">{symbol}</p>
+            <h3 className="text-base sm:text-lg font-semibold text-white mb-2">Symbol</h3>
+            <p className="text-sm sm:text-base text-gray-300">{symbol}</p>
           </div>
-          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 border border-white/10 flex flex-col">
             <Users className="w-8 h-8 text-yellow-500 mb-4" />
-            <h3 className="text-lg font-semibold text-white mb-2">Total Supply</h3>
-            <p className="text-gray-300">{totalSupply.toLocaleString()}</p>
+            <h3 className="text-base sm:text-lg font-semibold text-white mb-2">Total Supply</h3>
+            <p className="text-sm sm:text-base text-gray-300">{totalSupply.toLocaleString()}</p>
           </div>
-          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 border border-white/10 flex flex-col">
             <Percent className="w-8 h-8 text-yellow-500 mb-4" />
-            <h3 className="text-lg font-semibold text-white mb-2">Token Type</h3>
-            <p className="text-gray-300">{type}</p>
+            <h3 className="text-base sm:text-lg font-semibold text-white mb-2">Token Type</h3>
+            <p className="text-sm sm:text-base text-gray-300">{type}</p>
           </div>
         </div>
 
@@ -92,21 +92,21 @@ const TokenomicsSection: React.FC<TokenomicsProps> = ({
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Token Utility</h3>
             <div className="space-y-4">
               <div>
-                <h4 className="text-lg font-semibold text-white mb-2">Staking</h4>
-                <p className="text-gray-300">{stakingInfo}</p>
+                <h4 className="text-base sm:text-lg font-semibold text-white mb-1 sm:mb-2">Staking</h4>
+                <p className="text-sm sm:text-base text-gray-300">{stakingInfo}</p>
               </div>
               <div>
-                <h4 className="text-lg font-semibold text-white mb-2">Rewards</h4>
-                <p className="text-gray-300">{rewardsInfo}</p>
+                <h4 className="text-base sm:text-lg font-semibold text-white mb-1 sm:mb-2">Rewards</h4>
+                <p className="text-sm sm:text-base text-gray-300">{rewardsInfo}</p>
               </div>
               <div>
-                <h4 className="text-lg font-semibold text-white mb-2">Burn Mechanism</h4>
-                <p className="text-gray-300">{burnMechanism}</p>
+                <h4 className="text-base sm:text-lg font-semibold text-white mb-1 sm:mb-2">Burn Mechanism</h4>
+                <p className="text-sm sm:text-base text-gray-300">{burnMechanism}</p>
               </div>
             </div>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 sm:p-8 border border-white/10">
+          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 lg:p-8 border border-white/10">
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Token Pricing</h3>
             <div className="space-y-4">
               <div>
