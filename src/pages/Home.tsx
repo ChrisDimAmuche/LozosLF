@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[600px] h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=2832"
@@ -58,17 +58,17 @@ const Home = () => {
           <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto">
             The future of decentralized lottery and betting on Binance Smart Chain
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-2xl mx-auto flex-wrap">
             <Link
               to="/presale"
-              className="flex items-center justify-center space-x-2 bg-yellow-500 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold hover:bg-yellow-400 transition-all transform hover:scale-105 w-full sm:w-auto"
+              className="flex items-center justify-center space-x-2 bg-yellow-500 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold hover:bg-yellow-400 transition-all transform hover:scale-105 w-full sm:w-[calc(50%-0.5rem)] lg:w-auto min-w-[200px]"
             >
               <span>Join Presale</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
               to="/about"
-              className="flex items-center justify-center space-x-2 bg-white/10 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold hover:bg-white/20 transition-all backdrop-blur-sm w-full sm:w-auto"
+              className="flex items-center justify-center space-x-2 bg-white/10 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold hover:bg-white/20 transition-all backdrop-blur-sm w-full sm:w-[calc(50%-0.5rem)] lg:w-auto min-w-[200px]"
             >
               <span>Learn More</span>
               <Rocket className="w-5 h-5" />
@@ -109,13 +109,13 @@ const Home = () => {
 
       {/* Partners Section */}
       <section className={`py-12 sm:py-20 bg-black/80 ${tokenomics.visible ? 'mt-0' : 'mt-12 sm:mt-20'} transition-all duration-500`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-center text-white mb-8 sm:mb-12">
             Seeking <span className="text-yellow-500">partnerships with</span>
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 auto-rows-fr">
             {partners.map((partner) => (
-              <div key={partner.id} className="bg-white/5 backdrop-blur-lg rounded-xl p-8 border border-white/10 hover:border-yellow-500/50 transition-all">
+              <div key={partner.id} className="bg-white/5 backdrop-blur-lg rounded-xl p-6 sm:p-8 border border-white/10 hover:border-yellow-500/50 transition-all flex flex-col items-center justify-between">
                 <img
                   src={partner.logo}
                   alt={partner.name}
