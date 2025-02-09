@@ -110,12 +110,12 @@ const TokenomicsSection: React.FC<TokenomicsProps> = ({
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Token Pricing</h3>
             <div className="space-y-4">
               <div>
-                <h4 className="text-lg font-semibold text-white mb-2">Presale Price</h4>
-                <p className="text-gray-300">{presalePrice}</p>
+                <h4 className="text-base sm:text-lg font-semibold text-white mb-1 sm:mb-2">Presale Price</h4>
+                <p className="text-sm sm:text-base text-gray-300">{presalePrice}</p>
               </div>
               <div>
-                <h4 className="text-lg font-semibold text-white mb-2">Launch Price</h4>
-                <p className="text-gray-300">{launchPrice}</p>
+                <h4 className="text-base sm:text-lg font-semibold text-white mb-1 sm:mb-2">Launch Price</h4>
+                <p className="text-sm sm:text-base text-gray-300">{launchPrice}</p>
               </div>
             </div>
           </div>
