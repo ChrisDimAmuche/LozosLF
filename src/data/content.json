@@ -192,7 +192,7 @@
   },
   "documentationUrl": "",
   "logo": {
-    "url": "",
+    "url": "../../images/Lolgo web.png",
     "alt": "Lozo's LotoFair Logo",
     "recommendedSize": "180x60 pixels"
   },
@@ -236,6 +236,58 @@
           
         ],
         "order": 3
+      },
+      {
+        "id": "4",
+        "title": "Phase 4: Beta Platform Launch & Initial Testing",
+        "items": ["Deploy smart contracts on a testnet for security and functionality testing",
+          "Launch a beta version of the platform with core lottery mechanisms",
+          "Conduct community-driven testing with early adopters",
+          "Gather feedback to improve the platform’s usability and fairness"        
+        ],
+        "order": 4
+      },
+      {
+        "id": "5",
+        "title": "Phase 5: Security Audits & Legal Compliance",
+        "items": ["Conduct independent smart contract audits to ensure security",
+          "Address vulnerabilities and implement necessary fixes",
+          "Research and comply with gambling and lottery regulations in key regions",
+          "Develop clear terms of service and responsible gaming policies"        
+        ],
+        "order": 5
+      },
+      {
+        "id": "6",
+        "title": "Phase 6: Full-Scale Platform Launch & Marketing Expansion",
+        "items": ["Deploy the Lozo Lotofair platform on the mainnet with full functionality",
+          "Launch aggressive marketing campaigns, including influencer partnerships",
+          "Integrate the Jackpot Reserve system to enhance winnings",
+          "Roll out referral programs and user incentives",
+          "Expand partnerships with crypto projects, betting platforms, and influencers"        
+        ],
+        "order": 6
+      },
+      {
+        "id": "7",
+        "title": "Phase 7: Continuous Growth & Feature Expansion",
+        "items": ["Introduce new game modes and variations for player engagement",
+          "Expand to additional blockchain networks for cross-chain compatibility",
+          "Develop a mobile-friendly version of the platform",
+          "Integrate decentralized identity (DID) for seamless user authentication",
+          "Host large-scale tournaments and events with significant prize pools"        
+        ],
+        "order": 7
+      },
+      {
+        "id": "8",
+        "title": "Phase 8: DAO Governance & Global Adoption",
+        "items": ["Transition into a decentralized governance model (DAO) where the community votes on platform decisions",
+          "Expand into global markets with localized support and currency options",
+          "Form alliances with blockchain gaming ecosystems for further growth",
+          "Explore additional use cases for Lozo Lotofair beyond gaming (e.g., charity lotteries, DeFi integrations"        
+        ],
+        "order": 8
       }
     ]
   }
