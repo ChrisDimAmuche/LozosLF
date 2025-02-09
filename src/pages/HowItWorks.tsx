@@ -174,17 +174,17 @@ Dashboard Features:
 const HowItWorks = () => {
   return (
     <div className="min-h-screen py-12 bg-gradient-to-b from-gray-900 to-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 lg:px-6">
         {/* Hero Section */}
-        <div className="text-center mb-20">
-          <h1 className="text-5xl sm:text-6xl font-bold text-white mb-8">
+        <div className="text-center mb-16 sm:mb-20">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 sm:mb-8">
             How <span className="text-yellow-500">It Works</span>
           </h1>
           <div className="max-w-4xl mx-auto">
-            <p className="text-2xl text-gray-300 mb-4">
+            <p className="text-xl sm:text-2xl text-gray-300 mb-3 sm:mb-4">
               Lozo: "Lotterie Optimisée pour le Zest Of chance"
             </p>
-            <p className="text-xl text-gray-400">
+            <p className="text-lg sm:text-xl text-gray-400">
               (Optimized Lottery for the Thrill of Chance)
             </p>
           </div>
@@ -192,9 +192,9 @@ const HowItWorks = () => {
 
         {/* Platform Overview */}
         <section className="mb-20">
-          <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-10 border border-white/10">
+          <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 sm:p-8 lg:p-10 border border-white/10">
             <h2 className="text-4xl font-bold text-white mb-8">Platform Overview</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {[
                 { icon: <Shield className="w-8 h-8" />, title: "Transparent Lottery System", desc: "Fully verifiable and fair gaming system" },
                 { icon: <Target className="w-8 h-8" />, title: "Dual Betting Mechanisms", desc: "Section investment and drop betting options" },
@@ -203,7 +203,7 @@ const HowItWorks = () => {
                 { icon: <Award className="w-8 h-8" />, title: "Tournament Progression", desc: "Multi-level competitive structure" },
                 { icon: <Share2 className="w-8 h-8" />, title: "Flexible Participation", desc: "Multiple entry opportunities per game" }
               ].map((feature, index) => (
-                <div key={index} className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-yellow-500/50 transition-colors">
+                <div key={index} className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10 hover:border-yellow-500/50 transition-colors">
                   <div className="text-yellow-500 mb-4">{feature.icon}</div>
                   <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
                   <p className="text-gray-400">{feature.desc}</p>
@@ -218,14 +218,14 @@ const HowItWorks = () => {
           <h2 className="text-4xl font-bold text-white mb-8">The Tiered Tournament System</h2>
           
           {/* System Summary */}
-          <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-10 border border-white/10 mb-12">
+          <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 sm:p-8 lg:p-10 border border-white/10 mb-8 sm:mb-12">
             <p className="text-xl text-gray-300 leading-relaxed mb-6">
               The Tiered Tournament System is an innovative multi-level competition where players progress through 10 distinct stages. 
               Each stage offers unique betting opportunities and strategic challenges. Players can invest in colored sections, 
               predict which sections will be eliminated, or bet on advancing sections.
             </p>
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="bg-black/30 rounded-lg p-6">
+              <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+                <div className="bg-black/30 rounded-lg p-4 sm:p-6">
                   <h3 className="text-lg font-semibold text-yellow-500 mb-3">How It Progresses</h3>
                   <p className="text-gray-300">
                     Starting with 10 colored sections, each round eliminates one section through random selection. 
