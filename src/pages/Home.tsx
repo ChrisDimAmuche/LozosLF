@@ -51,11 +51,11 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black"></div>
         </div>
         
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="relative z-10 text-center px-3 sm:px-4 lg:px-6 max-w-6xl mx-auto">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6">
             Welcome to <span className="text-yellow-500">Lozo's LotoFair</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto px-4 sm:px-0">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto">
             The future of decentralized lottery and betting on Binance Smart Chain
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-2xl mx-auto flex-wrap">
@@ -108,14 +108,14 @@ const Home = () => {
       </div>
 
       {/* Partners Section */}
-      <section className={`py-12 sm:py-20 bg-black/80 ${tokenomics.visible ? 'mt-0' : 'mt-12 sm:mt-20'} transition-all duration-500`}>
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className={`py-10 sm:py-16 lg:py-20 bg-black/80 ${tokenomics.visible ? 'mt-0' : 'mt-10 sm:mt-16 lg:mt-20'} transition-all duration-500`}>
+        <div className="container max-w-6xl mx-auto px-3 sm:px-4 lg:px-6">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-white mb-6 sm:mb-8 md:mb-12">
             Seeking <span className="text-yellow-500">partnerships with</span>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 auto-rows-fr">
             {partners.map((partner) => (
-              <div key={partner.id} className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 md:p-8 border border-white/10 hover:border-yellow-500/50 transition-all flex flex-col items-center justify-between">
+              <div key={partner.id} className="bg-white/5 backdrop-blur-lg rounded-xl p-3 sm:p-4 md:p-6 lg:p-8 border border-white/10 hover:border-yellow-500/50 transition-all flex flex-col items-center justify-between">
                 <img
                   src={partner.logo}
                   alt={partner.name}
