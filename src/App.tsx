@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 
@@ -14,7 +14,8 @@ const HowItWorks = React.lazy(() => import('./pages/HowItWorks' /* webpackChunkN
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-black to-gray-900">
+    <HashRouter>
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-black to-gray-900">
         <Navbar />
         <React.Suspense 
           fallback={
@@ -26,17 +27,18 @@ function App() {
           <main className="flex-grow pt-16 px-4 sm:px-6 lg:px-8">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/vision/:id" element={<Vision />} />
-              <Route path="/community" element={<Community />} />
-              <Route path="/whitepaper" element={<Whitepaper />} />
-              <Route path="/presale" element={<Presale />} />
-              <Route path="/how-it-works" element={<HowItWorks />} />
+              <Route path="about" element={<About />} />
+              <Route path="vision/:id" element={<Vision />} />
+              <Route path="community" element={<Community />} />
+              <Route path="whitepaper" element={<Whitepaper />} />
+              <Route path="presale" element={<Presale />} />
+              <Route path="how-it-works" element={<HowItWorks />} />
             </Routes>
           </main>
         </React.Suspense>
         <Footer />
       </div>
+    </HashRouter>
   );
 }
 
