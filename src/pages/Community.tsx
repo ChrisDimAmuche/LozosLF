@@ -30,7 +30,7 @@ const CommunityIcon: React.FC<{
       <>
         <button
           onClick={() => setShowModal(true)}
-          className="flex flex-col items-center space-y-3 p-4 sm:p-6 md:p-8 bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 hover:border-yellow-500/50 transition-all"
+          className="flex flex-col items-center space-y-3 p-4 sm:p-6 md:p-8 bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 hover:border-yellow-500/50 transition-all min-h-[200px]"
         >
           <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-yellow-500">{icon}</div>
           <span className="text-white font-semibold text-sm sm:text-base">{name}</span>
@@ -38,8 +38,8 @@ const CommunityIcon: React.FC<{
 
         {showModal && (
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50">
-            <div className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 md:p-8 border border-white/10 max-w-md mx-4 w-[90%] sm:w-auto">
-              <div className="flex flex-col items-center text-center space-y-4">
+            <div className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 md:p-8 border border-white/10 max-w-md mx-4 w-[90%] sm:w-auto overflow-hidden">
+              <div className="flex flex-col items-center text-center space-y-4 overflow-y-auto max-h-[80vh]">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 text-yellow-500">{icon}</div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white">{name} Coming Soon!</h3>
                 <p className="text-gray-300 text-sm sm:text-base">
@@ -64,7 +64,7 @@ const CommunityIcon: React.FC<{
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex flex-col items-center space-y-3 p-4 sm:p-6 md:p-8 bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 hover:border-yellow-500/50 transition-all"
+      className="flex flex-col items-center space-y-3 p-4 sm:p-6 md:p-8 bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 hover:border-yellow-500/50 transition-all min-h-[200px]"
     >
       <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-yellow-500">{icon}</div>
       <span className="text-white font-semibold text-sm sm:text-base">{name}</span>
@@ -98,7 +98,7 @@ const Community = () => {
 
   return (
     <div className="min-h-screen py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 lg:px-6">
         <div className="mb-8">
           <Link
             to="/"
