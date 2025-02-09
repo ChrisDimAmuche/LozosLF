@@ -24,19 +24,19 @@ const RoadmapSection: React.FC<RoadmapProps> = ({ phases }) => {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 w-1 sm:w-1.5 h-full bg-yellow-500/20" />
+          <div className="absolute left-6 sm:left-1/2 transform sm:-translate-x-1/2 w-0.5 sm:w-1 h-full bg-yellow-500/20" />
 
           {/* Phases */}
-          <div className="space-y-12 sm:space-y-24">
+          <div className="space-y-16 sm:space-y-24">
             {sortedPhases.map((phase, index) => (
               <div key={phase.id} className={`relative flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'} sm:flex`}>
                 {/* Timeline dot */}
-                <div className="absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 -translate-y-1/2">
-                  <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-yellow-500" />
+                <div className="absolute left-6 sm:left-1/2 transform sm:-translate-x-1/2 -translate-y-1/2">
+                  <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-yellow-500 ring-4 ring-yellow-500/20" />
                 </div>
 
                 {/* Content */}
-                <div className={`w-full sm:w-5/12 ml-12 sm:ml-0 ${index % 2 === 0 ? 'sm:pr-16' : 'sm:pl-16'}`}>
+                <div className={`w-full sm:w-5/12 ml-16 sm:ml-0 ${index % 2 === 0 ? 'sm:pr-16' : 'sm:pl-16'}`}>
                 <div className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 lg:p-8 border border-white/10">
                     <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6">{phase.title}</h3>
                     <ul className="space-y-3 sm:space-y-4">
