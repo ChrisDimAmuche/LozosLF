@@ -37,7 +37,6 @@ function App() {
         </React.Suspense>
         <Footer />
       </div>
-    </AuthProvider>
   );
 }
 
