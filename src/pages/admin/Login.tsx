@@ -13,16 +13,16 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    
+
     try {
       const success = await login(email, password);
       if (success) {
-        navigate('/admin');
+        navigate('/admin'); // Ensure correct navigation with HashRouter
       } else {
         setError('Invalid credentials');
       }
     } catch (err) {
-      setError('An error occurred during login');
+      setError('An error occurred during login. Please try again.');
     }
   };
 
@@ -53,7 +53,7 @@ const Login = () => {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="appearance-none relative block w-full px-3 py-2 mt-1 border border-white/10 bg-white/5 text-white rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
+                className="w-full px-3 py-2 mt-1 border border-white/10 bg-white/5 text-white rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
               />
             </div>
             <div>
@@ -67,7 +67,7 @@ const Login = () => {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="appearance-none relative block w-full px-3 py-2 mt-1 border border-white/10 bg-white/5 text-white rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
+                className="w-full px-3 py-2 mt-1 border border-white/10 bg-white/5 text-white rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
               />
             </div>
           </div>
