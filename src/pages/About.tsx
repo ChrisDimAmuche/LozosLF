@@ -31,19 +31,19 @@ const About = () => {
             </p>
           </div>
           
-          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-8 border border-white/10">
-            <Zap className="w-12 h-12 text-yellow-500 mb-4" />
-            <h3 className="text-xl font-bold text-white mb-4">Fast & Efficient</h3>
-            <p className="text-gray-300">
+          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 sm:p-8 border border-white/10">
+            <Zap className="w-10 h-10 sm:w-12 sm:h-12 text-yellow-500 mb-4" />
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Fast & Efficient</h3>
+            <p className="text-sm sm:text-base text-gray-300">
               Leveraging Binance Smart Chain for quick transactions and minimal fees, making participation
               accessible to everyone.
             </p>
           </div>
           
-          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-8 border border-white/10">
-            <Lock className="w-12 h-12 text-yellow-500 mb-4" />
-            <h3 className="text-xl font-bold text-white mb-4">Fair & Decentralized</h3>
-            <p className="text-gray-300">
+          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 sm:p-8 border border-white/10">
+            <Lock className="w-10 h-10 sm:w-12 sm:h-12 text-yellow-500 mb-4" />
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Fair & Decentralized</h3>
+            <p className="text-sm sm:text-base text-gray-300">
               Smart contract-powered lottery system ensures fairness and eliminates the possibility of
               manipulation.
             </p>
@@ -51,9 +51,9 @@ const About = () => {
         </div>
 
         {/* Vision Section */}
-        <div className="bg-white/5 backdrop-blur-lg rounded-xl p-8 border border-white/10 mb-16">
-          <h2 className="text-3xl font-bold text-white mb-6">Our Vision</h2>
-          <p className="text-gray-300 text-lg leading-relaxed">
+        <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 sm:p-8 border border-white/10 mb-16">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">Our Vision</h2>
+          <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
             Lozo's LotoFair aims to revolutionize the traditional lottery and betting industry by leveraging
             blockchain technology to create a transparent, fair, and accessible platform for everyone.
             We believe in the power of decentralization to eliminate intermediaries and return more value
@@ -64,10 +64,10 @@ const About = () => {
         {/* Founders Section */}
         <div className="mb-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white">
               Connect with the <span className="text-yellow-500">Creator</span>
             </h2>
-            <p className="text-xl text-gray-300 mt-4">
+            <p className="text-lg sm:text-xl text-gray-300 mt-4">
               Explore Partnership Opportunities and Strategic Collaborations
             </p>
           </div>
