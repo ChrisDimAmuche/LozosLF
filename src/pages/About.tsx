@@ -11,21 +11,21 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
             About <span className="text-yellow-500">Lozo's LotoFair</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4 sm:px-0">
             A revolutionary decentralized lottery and betting platform built on the Binance Smart Chain,
             designed to provide fair, transparent, and exciting opportunities for everyone.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-8 border border-white/10">
-            <Shield className="w-12 h-12 text-yellow-500 mb-4" />
-            <h3 className="text-xl font-bold text-white mb-4">Secure & Transparent</h3>
-            <p className="text-gray-300">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-16">
+          <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 sm:p-8 border border-white/10">
+            <Shield className="w-10 h-10 sm:w-12 sm:h-12 text-yellow-500 mb-4" />
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Secure & Transparent</h3>
+            <p className="text-sm sm:text-base text-gray-300">
               Built on blockchain technology, ensuring complete transparency and security for all transactions
               and lottery draws.
             </p>
@@ -74,9 +74,9 @@ const About = () => {
           
           <div className="max-w-4xl mx-auto">
             {founders.map((founder) => (
-              <div key={founder.id} className="bg-white/5 backdrop-blur-lg rounded-xl p-8 border border-white/10">
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-                  <div className="w-48 h-48 overflow-hidden rounded-xl flex-shrink-0">
+              <div key={founder.id} className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 md:p-8 border border-white/10">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4 sm:gap-6 md:gap-8">
+                  <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 overflow-hidden rounded-xl flex-shrink-0">
                     <img
                       src={founder.image}
                       alt={founder.name}
@@ -84,10 +84,10 @@ const About = () => {
                     />
                   </div>
                   <div className="flex-1 text-center md:text-left">
-                    <h3 className="text-2xl font-bold text-white mb-2">{founder.name}</h3>
-                    <p className="text-yellow-500 text-lg mb-4">{founder.title}</p>
-                    <p className="text-gray-300 mb-6">{founder.description}</p>
-                    <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-6">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{founder.name}</h3>
+                    <p className="text-yellow-500 text-base sm:text-lg mb-3 sm:mb-4">{founder.title}</p>
+                    <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6">{founder.description}</p>
+                    <div className="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4 mb-4 sm:mb-6">
                       {founder.socialLinks.map((link, index) => (
                         <a
                           key={index}
