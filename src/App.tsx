@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, HashRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 
@@ -14,8 +14,7 @@ const HowItWorks = React.lazy(() => import('./pages/HowItWorks' /* webpackChunkN
 
 function App() {
   return (
-    <HashRouter>
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-black to-gray-900">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-black to-gray-900">
         <Navbar />
         <React.Suspense 
           fallback={
@@ -38,7 +37,6 @@ function App() {
         </React.Suspense>
         <Footer />
       </div>
-    </HashRouter>
   );
 }
 
