@@ -19,13 +19,13 @@ const Vision = () => {
 
   return (
     <div className="min-h-screen py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white/5 backdrop-blur-lg rounded-xl p-8 border border-white/10">
-          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:space-x-6 mb-8">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 lg:px-6">
+        <div className="bg-white/5 backdrop-blur-lg rounded-xl p-4 sm:p-6 lg:p-8 border border-white/10 overflow-hidden">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
             <img
               src={founder.image}
               alt={founder.name}
-              className="w-24 h-24 object-cover rounded-lg shrink-0"
+              className="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-lg shrink-0"
             />
             <div className="text-center sm:text-left">
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
@@ -35,8 +35,8 @@ const Vision = () => {
             </div>
           </div>
 
-          <div className="prose prose-invert max-w-none">
-            <div className="text-gray-300 text-base sm:text-lg leading-relaxed whitespace-pre-wrap break-words">
+          <div className="prose prose-invert max-w-none overflow-hidden">
+            <div className="text-gray-300 text-base sm:text-lg leading-relaxed whitespace-pre-wrap break-words overflow-y-auto">
               {founder.vision}
             </div>
           </div>
