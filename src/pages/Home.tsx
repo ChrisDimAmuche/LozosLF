@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[600px] h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[600px] h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden bg-black">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=2832"
@@ -107,7 +107,7 @@ const Home = () => {
       </div>
 
       {/* Partners Section */}
-      <section className={`${tokenomics.visible ? 'mt-0' : 'mt-12 sm:mt-16 lg:mt-24'} transition-all duration-500 bg-black/80`}>
+      <section className={`${tokenomics.visible ? 'mt-0' : 'mt-12 sm:mt-16 lg:mt-24'} transition-all duration-500 bg-black`}>
         <div className="py-12 sm:py-16 lg:py-24 container max-w-6xl mx-auto">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-white mb-6 sm:mb-8 md:mb-12">
             Seeking <span className="text-yellow-500">partnerships with</span>
@@ -131,7 +131,7 @@ const Home = () => {
       </section>
 
       {/* Roadmap Section */}
-      <div className={`transition-all duration-700 ${roadmap.visible ? 'opacity-100 max-h-[5000px]' : 'opacity-0 max-h-0 overflow-hidden'}`}>
+      <div className={`transition-all duration-700 ${roadmap.visible ? 'opacity-100 max-h-[5000px]' : 'opacity-0 max-h-0 overflow-hidden'} bg-black`}>
         <RoadmapSection phases={roadmap.phases} />
       </div>
     </div>
