@@ -69,14 +69,14 @@ const Home = () => {
             </Link>
             <Link
               to="/how-it-works"
-              className="flex items-center justify-center space-x-2 bg-white/10 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg font-bold hover:bg-white/20 transition-all backdrop-blur-sm w-full sm:w-auto text-sm sm:text-base"
+              className="flex items-center justify-center space-x-3 bg-white/10 text-white px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-lg font-extrabold hover:bg-white/20 transition-all backdrop-blur-sm w-full sm:w-[calc(50%-1rem)] lg:w-auto min-w-[180px] sm:min-w-[220px] text-base sm:text-lg"
             >
               <span>How It Works</span>
               <BookOpen className="w-5 h-5" />
             </Link>
             <Link
               to="/community"
-              className="flex items-center justify-center space-x-2 bg-white/10 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg font-bold hover:bg-white/20 transition-all backdrop-blur-sm w-full sm:w-auto text-sm sm:text-base"
+              className="flex items-center justify-center space-x-3 bg-white/10 text-white px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-lg font-extrabold hover:bg-white/20 transition-all backdrop-blur-sm w-full sm:w-[calc(50%-1rem)] lg:w-auto min-w-[180px] sm:min-w-[220px] text-base sm:text-lg"
             >
               <span>Join the community</span>
               <Users className="w-5 h-5" />
