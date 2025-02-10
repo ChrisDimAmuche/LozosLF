@@ -16,8 +16,8 @@ const RoadmapSection: React.FC<RoadmapProps> = ({ phases }) => {
   const sortedPhases = [...phases].sort((a, b) => a.order - b.order);
 
   return (
-    <section>
-      <div className="py-12 sm:py-20 container max-w-6xl mx-auto px-3 sm:px-4 lg:px-6">
+    <section className="bg-black">
+      <div className="py-12 sm:py-20 container max-w-6xl mx-auto">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-white mb-6 sm:mb-8 md:mb-16">
           <span className="text-yellow-500">Roadmap</span>
         </h2>
