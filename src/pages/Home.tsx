@@ -43,10 +43,10 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-[600px] h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden bg-black">
         {/* Spotlight gradient */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-slate-800/30 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(100%_100%_at_top_left,_var(--tw-gradient-stops))] from-slate-700/40 via-slate-900/20 to-transparent" />
         
         <div className="relative z-10 text-center max-w-6xl mx-auto">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6">
             Welcome to <span className="text-yellow-500">Lozo's LotoFair</span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto">
