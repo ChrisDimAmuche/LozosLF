@@ -16,7 +16,7 @@ const RoadmapSection: React.FC<RoadmapProps> = ({ phases }) => {
   const sortedPhases = [...phases].sort((a, b) => a.order - b.order);
 
   return (
-    <section className="bg-black">
+    <section className="bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-black to-black">
       <div className="py-12 sm:py-20 container max-w-6xl mx-auto">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-white mb-6 sm:mb-8 md:mb-16">
           <span className="text-yellow-500">Roadmap</span>
