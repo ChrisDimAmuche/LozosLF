@@ -1,5 +1,5 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 
@@ -12,9 +12,20 @@ const Whitepaper = React.lazy(() => import('./pages/Whitepaper' /* webpackChunkN
 const Presale = React.lazy(() => import('./pages/Presale' /* webpackChunkName: "presale" */));
 const HowItWorks = React.lazy(() => import('./pages/HowItWorks' /* webpackChunkName: "how-it-works" */));
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  
+  return null;
+};
+
 function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-black to-gray-900">
+    <div className="min-h-screen flex flex-col bg-black">
+        <ScrollToTop />
         <Navbar />
         <React.Suspense 
           fallback={
@@ -23,7 +34,7 @@ function App() {
             </div>
           }
         >
-          <main className="flex-grow pt-16 px-4 sm:px-6 lg:px-8">
+          <main className="flex-grow pt-16">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="about" element={<About />} />
