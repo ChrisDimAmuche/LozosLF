@@ -48,7 +48,7 @@ const Home = () => {
             alt="Crypto background"
             className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black"></div>
+          <div className="absolute inset-0"></div>
         </div>
         
         <div className="relative z-10 text-center px-3 sm:px-4 lg:px-6 max-w-6xl mx-auto">
