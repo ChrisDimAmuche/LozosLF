@@ -35,8 +35,8 @@ const TokenomicsSection: React.FC<TokenomicsProps> = ({
   launchPrice
 }) => {
   return (
-    <section>
-      <div className="py-12 sm:py-20 container max-w-6xl mx-auto px-3 sm:px-4 lg:px-6">
+    <section className="bg-black">
+      <div className="py-12 sm:py-20 container max-w-6xl mx-auto">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-white mb-6 sm:mb-8 md:mb-12">
           <span className="text-yellow-500">Tokenomics</span>
         </h2>
