@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[600px] h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden py-12 sm:py-16 lg:py-20">
+      <section className="relative min-h-[600px] h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=2832"
@@ -92,7 +92,7 @@ const Home = () => {
       </section>
 
       {/* Tokenomics Section */}
-      <div className={`transition-all duration-500 ${tokenomics.visible ? 'opacity-100 max-h-[2000px]' : 'opacity-0 max-h-0 overflow-hidden'}`}>
+      <div className={`bg-black/80 transition-all duration-500 ${tokenomics.visible ? 'opacity-100 max-h-[2000px]' : 'opacity-0 max-h-0 overflow-hidden'}`}>
         <TokenomicsSection
           name={tokenomics.name}
           symbol={tokenomics.symbol}
@@ -108,8 +108,8 @@ const Home = () => {
       </div>
 
       {/* Partners Section */}
-      <section className={`py-12 sm:py-16 lg:py-24 bg-black/80 ${tokenomics.visible ? 'mt-0' : 'mt-12 sm:mt-16 lg:mt-24'} transition-all duration-500`}>
-        <div className="container max-w-6xl mx-auto px-3 sm:px-4 lg:px-6">
+      <section className={`bg-black/80 ${tokenomics.visible ? 'mt-0' : 'mt-12 sm:mt-16 lg:mt-24'} transition-all duration-500`}>
+        <div className="py-12 sm:py-16 lg:py-24 container max-w-6xl mx-auto px-3 sm:px-4 lg:px-6">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-white mb-6 sm:mb-8 md:mb-12">
             Seeking <span className="text-yellow-500">partnerships with</span>
           </h2>
@@ -132,7 +132,7 @@ const Home = () => {
       </section>
 
       {/* Roadmap Section */}
-      <div className={`transition-all duration-700 ${roadmap.visible ? 'opacity-100 max-h-[5000px]' : 'opacity-0 max-h-0 overflow-hidden'}`}>
+      <div className={`bg-black/80 transition-all duration-700 ${roadmap.visible ? 'opacity-100 max-h-[5000px]' : 'opacity-0 max-h-0 overflow-hidden'}`}>
         <RoadmapSection phases={roadmap.phases} />
       </div>
     </div>
