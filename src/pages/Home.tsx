@@ -45,24 +45,24 @@ const Home = () => {
         {/* Spotlight gradient */}
         <div className="absolute inset-0 bg-[radial-gradient(100%_100%_at_top_left,_var(--tw-gradient-stops))] from-slate-700/40 via-slate-900/20 to-transparent" />
         
-        <div className="relative z-10 text-center max-w-6xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6">
+        <div className="relative z-10 text-center max-w-6xl mx-auto px-4 sm:px-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold sm:font-bold text-white mb-6 sm:mb-8">
             Welcome to <span className="text-yellow-500">Lozo's LotoFair</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 sm:mb-10 max-w-2xl mx-auto px-4">
             The future of decentralized lottery and betting on Binance Smart Chain
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-3xl mx-auto flex-wrap">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 w-full max-w-3xl mx-auto flex-wrap px-4">
             <Link
               to="/presale"
-              className="flex items-center justify-center space-x-2 bg-yellow-500 text-black px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg font-bold hover:bg-yellow-400 transition-all transform hover:scale-105 w-full sm:w-[calc(50%-0.5rem)] lg:w-auto min-w-[160px] sm:min-w-[200px] text-sm sm:text-base"
+              className="flex items-center justify-center space-x-3 bg-yellow-500 text-black px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-lg font-extrabold hover:bg-yellow-400 transition-all transform hover:scale-105 w-full sm:w-[calc(50%-1rem)] lg:w-auto min-w-[180px] sm:min-w-[220px] text-base sm:text-lg"
             >
               <span>Join Presale</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
               to="/about"
-              className="flex items-center justify-center space-x-2 bg-white/10 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg font-bold hover:bg-white/20 transition-all backdrop-blur-sm w-full sm:w-[calc(50%-0.5rem)] lg:w-auto min-w-[160px] sm:min-w-[200px] text-sm sm:text-base"
+              className="flex items-center justify-center space-x-3 bg-white/10 text-white px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-lg font-extrabold hover:bg-white/20 transition-all backdrop-blur-sm w-full sm:w-[calc(50%-1rem)] lg:w-auto min-w-[180px] sm:min-w-[220px] text-base sm:text-lg"
             >
               <span>Learn More</span>
               <Rocket className="w-5 h-5" />
