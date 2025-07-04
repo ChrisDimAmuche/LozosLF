@@ -56,7 +56,7 @@
     {
       "id": "1",
       "name": "Binance",
-      "logo": "https://cryptologos.cc/logos/binance-coin-bnb-logo.png",
+      "logo": "https://assets.coingecko.com/coins/images/825/large/binance-coin-logo.png",
       "description": "One of the largest cryptocurrency exchanges in the world."
     },
     {
@@ -67,7 +67,7 @@
     },
     {
       "id": "3",
-      "name": "Decentraland",
+      "name": "https://assets.coingecko.com/coins/images/878/large/decentraland-mana-logo.png",
       "logo": "https://cryptologos.cc/logos/decentraland-mana-logo.png",
       "description": "One of the first fully decentralized virtual worlds built on the Ethereum blockchain."
     }
